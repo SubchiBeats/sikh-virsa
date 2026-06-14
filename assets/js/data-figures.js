@@ -4,17 +4,15 @@
 
    ACCURACY POLICY
    ----------------
-   Every entry here is built on widely-agreed, well-documented facts (the order
-   of the Gurus, principal life events, core contributions). Where a popular
-   account is devotional tradition (Janamsakhi / Sakhi) rather than a documented
-   historical record, the related STORY entry is labelled accordingly in
-   data-stories.js. Dates are commonly-cited Gregorian years; a few are
-   approximate across scholarly sources and are marked. Each figure links out to
-   an authoritative resource so anyone can verify and read further.
+   The order of the Gurus and principal life events are well established.
+   Devotional traditions and details that differ across historical sources are
+   qualified in the copy and related stories. Dates are commonly cited
+   Gregorian years; disputed chronologies are marked. Each figure links to a
+   starting reference for further reading, not to a final authority.
 
-   Please treat this as a respectful starting point that a Granthi or scholar
-   should review before publication. Corrections are welcome — just edit the
-   relevant object below.
+   Please treat this as a respectful starting point that knowledgeable Granthis,
+   historians, and Gurmukhi readers should continue to review. Corrections are
+   welcome — just edit the relevant object below.
    ========================================================================== */
 
 window.VIRSA = window.VIRSA || {};
@@ -158,9 +156,9 @@ window.VIRSA.figures = [
     relevance:
       "Compiled the first authoritative volume of Sikh scripture, completed Harmandir Sahib, and became the first of the Sikh martyrs.",
     summary: [
-      "Guru Arjan Dev Ji compiled the Adi Granth in 1604 — gathering the hymns of the Gurus before him together with the writings of Hindu and Muslim saints (Bhagats) — and installed it at Harmandir Sahib (the Golden Temple).",
+      "Guru Arjan Dev Ji compiled the Adi Granth in 1604 — gathering the hymns of the Gurus before him together with the writings of Bhagats from diverse devotional backgrounds — and installed it at Harmandir Sahib.",
       "He oversaw the completion of Harmandir Sahib, traditionally remembered for its four doors opening in every direction, a sign that all people are welcome.",
-      "He composed Sukhmani Sahib, the beloved 'Song of Peace'. In 1606, under Emperor Jahangir, he was tortured and gave his life rather than alter his faith — becoming the first Sikh martyr and shaping the community's commitment to standing firm in the face of injustice."
+      "He composed Sukhmani Sahib, the beloved 'Song of Peace'. His death under Emperor Jahangir's authority in 1606 is historically attested; Sikh tradition preserves accounts of severe torture and honours him as the first Sikh martyr."
     ],
     contributions: [
       "Compiled the Adi Granth (1604), the foundation of Sri Guru Granth Sahib Ji.",
@@ -191,13 +189,13 @@ window.VIRSA.figures = [
     summary: [
       "After the martyrdom of his father, Guru Arjan Dev Ji, the Sixth Guru wore two swords representing Miri (temporal authority) and Piri (spiritual authority), teaching that a person of faith must also stand against tyranny.",
       "He built the Akal Takht ('Throne of the Timeless') facing Harmandir Sahib, a seat of temporal authority for the community.",
-      "He is remembered for Bandi Chhor Divas: released from imprisonment at Gwalior Fort, he refused to leave unless the princes held there were freed with him — an act of justice celebrated by Sikhs around the time of Diwali."
+      "Sikh tradition remembers Bandi Chhor Divas as the Guru's release from Gwalior Fort together with imprisoned princes — an act of justice celebrated around the time of Diwali."
     ],
     contributions: [
       "Established the principle of Miri-Piri (spiritual and temporal balance).",
       "Built the Akal Takht at Amritsar.",
       "Organised the community's defence against oppression.",
-      "Bandi Chhor Divas — secured the release of fellow prisoners."
+      "Bandi Chhor Divas — remembered in Sikh tradition for the release of fellow prisoners."
     ],
     gurbani:
       "Guru Hargobind Ji did not add new compositions to the scripture; his teaching lives in the example of standing for justice rooted in spirituality.",
@@ -218,21 +216,21 @@ window.VIRSA.figures = [
     birthplace: "Kiratpur Sahib, Punjab",
     icon: "leaf",
     relevance:
-      "Remembered for gentleness, compassion for all living things, and care for the sick through a garden of healing herbs.",
+      "Remembered in Sikh tradition for gentleness, compassion for living things, and care for the sick.",
     summary: [
       "Guru Har Rai Ji is celebrated for his tenderness — a famous tradition tells how, saddened to have accidentally harmed a flower, he resolved to walk with even greater care for life around him.",
-      "He maintained a renowned herbal garden and dispensary, offering medicine and healing to those who came to him.",
+      "Sikh tradition also remembers a herbal garden and dispensary associated with his care for the sick.",
       "While he kept a trained force for defence, he steered the community toward peace, healing, and quiet devotion."
     ],
     contributions: [
-      "Cared for the sick through a garden of medicinal herbs.",
+      "Remembered in Sikh tradition for care of the sick and knowledge of medicinal herbs.",
       "Modelled compassion toward all living beings.",
       "Preserved the community's strength while emphasising peace."
     ],
     gurbani:
       "Guru Har Rai Ji upheld and taught the existing scripture, emphasising that the Gurus' words must be honoured in full.",
     forKids:
-      "Guru Har Rai Ji was very kind to animals and plants and grew a special garden of herbs to make medicine for sick people. He showed that being gentle and caring is a kind of strength.",
+      "Sikh tradition remembers Guru Har Rai Ji as very kind to animals and plants and as caring for sick people. He showed that being gentle and caring is a kind of strength.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Har_Rai",
     tags: ["compassion", "healing", "nature"]
   },
@@ -248,19 +246,19 @@ window.VIRSA.figures = [
     birthplace: "Kiratpur Sahib, Punjab",
     icon: "hands",
     relevance:
-      "The youngest Guru, who served those struck by an epidemic in Delhi and gave his own life in that service.",
+      "The youngest Guru, remembered in Sikh tradition for serving people during an epidemic in Delhi.",
     summary: [
       "Becoming Guru as a young child, Guru Har Krishan Ji is remembered for wisdom far beyond his years and for his selfless care of the suffering.",
-      "During an epidemic in Delhi he tended to the sick without regard for his own safety, and contracted the illness himself, passing away in 1664. The site is today Gurdwara Bangla Sahib, where water from its sarovar is revered.",
-      "Sikhs remember him in Ardas with the words that recalling him removes all suffering."
+      "Sikh tradition remembers him serving people during an epidemic in Delhi. He contracted illness and passed away in 1664. The site is today Gurdwara Bangla Sahib, whose sarovar is a place of devotion and comfort.",
+      "Ardas asks Sikhs to remember him and says that seeing him made suffering depart."
     ],
     contributions: [
-      "Served the sick during an epidemic in Delhi, at the cost of his own life.",
+      "Remembered for serving the sick during an epidemic in Delhi.",
       "Showed that true greatness is measured by service, not age.",
       "His memory is honoured at Gurdwara Bangla Sahib, Delhi."
     ],
     gurbani:
-      "Guru Har Krishan Ji is invoked in the daily Ardas as the one whose remembrance dispels all sorrow.",
+      "Ardas asks Sikhs to remember Guru Har Krishan Ji and says that seeing him made suffering depart.",
     forKids:
       "Guru Har Krishan Ji became Guru when he was just a little boy, but he was very wise and kind. When many people in Delhi got sick, he helped take care of them, even though it was dangerous. He is remembered for his big, brave heart.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Har_Krishan",
@@ -278,15 +276,15 @@ window.VIRSA.figures = [
     birthplace: "Amritsar, Punjab",
     icon: "shield",
     relevance:
-      "Gave his life defending the right of others — people of a different faith — to worship freely; remembered as 'the Shield of India'.",
+      "Executed under Mughal authority in 1675 and remembered in Sikh tradition for defending the freedom of conscience of people of another faith.",
     summary: [
       "Guru Tegh Bahadur Ji founded the town of Anandpur Sahib and composed many hymns of deep spiritual wisdom.",
-      "When Kashmiri Pandits sought his help against forced conversion, he stood up for their freedom to practise their own religion — not his own. In 1675, under Emperor Aurangzeb, he was martyred in Delhi at the site now known as Gurdwara Sis Ganj Sahib.",
-      "His sacrifice for the religious freedom of others — a faith not his own — is one of history's most striking stands for human conscience, earning him the title 'Hind di Chadar' (the Shield of India)."
+      "His execution under Emperor Aurangzeb's authority in 1675 is historically attested. Sikh tradition records that Kashmiri Pandits facing forced conversion sought his help and that he stood for their freedom to practise a faith other than his own.",
+      "Sikhs remember this sacrifice for freedom of conscience with the title 'Hind di Chadar' (the Shield of India)."
     ],
     contributions: [
       "Founded Anandpur Sahib.",
-      "Martyred in 1675 defending freedom of religion for all, including those of other faiths.",
+      "Martyred in 1675; remembered for defending freedom of conscience, including for people of other faiths.",
       "Composed many hymns and saloks included in Sri Guru Granth Sahib Ji.",
       "Remembered as 'Hind di Chadar', the protector of the oppressed."
     ],
@@ -345,7 +343,7 @@ window.VIRSA.figures = [
       "The eternal Guru of the Sikhs: a scripture of divine wisdom that is treated as a living, present Guru rather than merely a book.",
     summary: [
       "Sri Guru Granth Sahib Ji is the holy scripture and the eternal Guru of the Sikhs, comprising 1,430 angs (pages). It is written largely in poetry set to raags (musical measures).",
-      "It contains the hymns of six of the Sikh Gurus alongside the writings of Bhagats (saints) and Bhatts from Hindu and Muslim backgrounds — among them Bhagat Kabir, Bhagat Ravidas, Bhagat Namdev, and Sheikh Farid — a remarkable expression of one shared truth across communities.",
+      "It contains the hymns of six Sikh Gurus alongside the writings of Bhagats and Bhatts from diverse backgrounds — among them Bhagat Kabir, Bhagat Ravidas, Bhagat Namdev, and Sheikh Farid — expressing the reach of Divine truth across communities.",
       "Importantly, it is not a book of historical narratives or stories of events; it is devotional and spiritual wisdom — guidance on how to live, how to remember the Divine, and how to find peace. Sikhs treat it with the utmost respect as their living Guru."
     ],
     contributions: [
@@ -379,11 +377,11 @@ window.VIRSA.figures = [
     summary: [
       "Bhai Mardana Ji, a Muslim by birth, was Guru Nanak Dev Ji's lifelong companion on his great journeys, accompanying the Guru's hymns on the rabab.",
       "Their friendship — a Sikh Guru and a devoted Muslim companion travelling side by side — beautifully embodies the Guru's teaching that the Divine belongs to all people.",
-      "He holds an honoured place in Sikh memory as the first to set Gurbani to music."
+      "He holds an honoured place in Sikh memory for accompanying Guru Nanak Dev Ji's bani on the rabab."
     ],
     contributions: [
       "Accompanied Guru Nanak Dev Ji on the rabab throughout his travels.",
-      "Helped give Gurbani its musical (kirtan) tradition.",
+      "Helped establish the rabab-accompanied kirtan tradition associated with Guru Nanak Dev Ji.",
       "A symbol of friendship and unity across religions."
     ],
     gurbani:
@@ -401,14 +399,14 @@ window.VIRSA.figures = [
     gurmukhi: "ਮਾਤਾ ਗੁਜਰੀ ਜੀ",
     title: "Mother and Pillar of the House of the Guru",
     born: "1624",
-    passed: "1705",
+    passed: "1704/1705",
     birthplace: "Kartarpur, Punjab",
     icon: "lotus",
     relevance:
       "Wife of Guru Tegh Bahadur Ji and mother of Guru Gobind Singh Ji; a figure of immense strength who cared for her young grandsons to the very end.",
     summary: [
       "Mata Gujri Ji was the wife of the Ninth Guru and the mother of the Tenth. Through the martyrdom of her husband and the trials of her family, she remained a steadfast pillar of faith.",
-      "In the winter of 1705 she was separated from the family at Sirhind together with the two younger Sahibzade, comforting and strengthening them through their final days.",
+      "In the winter events dated 1704 or 1705 by different chronologies, she was separated from the family with the two younger Sahibzade, comforting and strengthening them through their final days.",
       "She is remembered as a model of courage, dignity, and unshakeable faith in the face of unimaginable hardship."
     ],
     contributions: [
@@ -421,7 +419,7 @@ window.VIRSA.figures = [
     forKids:
       "Mata Gujri Ji was Guru Gobind Singh Ji's mother and a very strong, brave woman. Even in the hardest, coldest times, she stayed calm and full of faith, and gave courage to her little grandsons.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Mata_Gujri",
-    tags: ["family", "courage", "faith", "sahibzade"]
+    tags: ["family", "courage", "faith", "sahibzade", "martyr"]
   },
   {
     id: "char-sahibzade",
@@ -431,26 +429,26 @@ window.VIRSA.figures = [
     gurmukhi: "ਚਾਰ ਸਾਹਿਬਜ਼ਾਦੇ",
     title: "The Four Sons of Guru Gobind Singh Ji",
     born: "1687–1699",
-    passed: "1705",
+    passed: "1704/1705",
     birthplace: "Anandpur Sahib & Paonta Sahib",
     icon: "shield",
     relevance:
       "The four young sons of the Tenth Guru, who all gave their lives rather than abandon their faith — among the most revered martyrs in Sikh history.",
     summary: [
-      "The elder Sahibzade, Baba Ajit Singh Ji and Baba Jujhar Singh Ji, fell in battle at Chamkaur in December 1705, fighting bravely against overwhelming numbers.",
+      "The elder Sahibzade, Baba Ajit Singh Ji and Baba Jujhar Singh Ji, fell in battle at Chamkaur during the winter events dated 1704 or 1705 by different chronologies.",
       "The younger Sahibzade, Baba Zorawar Singh Ji (aged about nine) and Baba Fateh Singh Ji (aged about seven), were captured at Sirhind. Offered their lives if they would abandon their faith, they refused, and were martyred — a stand of astonishing courage for ones so young.",
       "Their sacrifice, and that of countless others, is remembered each December and stands at the heart of Sikh history."
     ],
     contributions: [
-      "Baba Ajit Singh Ji & Baba Jujhar Singh Ji — martyred in battle at Chamkaur (1705).",
-      "Baba Zorawar Singh Ji & Baba Fateh Singh Ji — martyred at Sirhind (1705), refusing to abandon their faith.",
+      "Baba Ajit Singh Ji & Baba Jujhar Singh Ji — martyred in battle at Chamkaur (1704/1705 chronology).",
+      "Baba Zorawar Singh Ji & Baba Fateh Singh Ji — martyred at Sirhind (1704/1705 chronology), refusing to abandon their faith.",
       "Eternal symbols of courage, conviction, and faith over fear."
     ],
     gurbani:
       "Their steadfastness embodies the Gurbani ideal that truth and faith are worth more than life itself.",
     forKids:
       "Guru Gobind Singh Ji had four sons. Even though some were very young — about seven and nine — they were incredibly brave and would not give up their beliefs, no matter what. Sikhs remember their courage every year.",
-    verifyUrl: "https://www.sikhiwiki.org/index.php/Sahibzadas",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Gobind_Singh",
     tags: ["martyrs", "courage", "sahibzade", "faith"]
   },
   {
@@ -525,15 +523,15 @@ window.VIRSA.figures = [
     birthplace: "Jhabal, Punjab",
     icon: "shield",
     relevance:
-      "A woman warrior who rallied a group of Sikhs who had turned back, leading them to return and fight at the Battle of Muktsar (1705).",
+      "A woman warrior who rallied a group of Sikhs who had turned back, leading them to return and fight at Muktsar; the battle's year varies by chronology.",
     summary: [
       "When a group of Sikhs left the Guru's side during the siege of Anandpur, Mai Bhago Ji refused to accept their leaving. She gathered them and led them back to stand with the Guru.",
-      "At the Battle of Muktsar (1705) they fought valiantly; those who fell are remembered as the 'Chali Mukte' — the Forty Liberated Ones. Mai Bhago Ji herself survived and went on to remain close to the Guru as a devoted protector.",
+      "At the Battle of Muktsar, dated 1705 or 1706 by different chronologies, they fought valiantly; those who fell are remembered as the 'Chali Mukte' — the Forty Liberated Ones. Mai Bhago Ji survived and remained close to the Guru.",
       "She stands as a powerful example of a woman's leadership, courage, and conviction in Sikh history."
     ],
     contributions: [
       "Rallied and led back the Sikhs who had departed.",
-      "Fought at the Battle of Muktsar (1705).",
+      "Fought at the Battle of Muktsar (1705/1706 chronology).",
       "An enduring symbol of women's courage and leadership in Sikhi."
     ],
     gurbani:
@@ -588,7 +586,7 @@ window.VIRSA.figures = [
       "Led the Sikhs after Guru Gobind Singh Ji, established a just administration, and was martyred for his faith.",
     summary: [
       "Once an ascetic, he became a devoted follower of Guru Gobind Singh Ji and a formidable leader of the Khalsa after the Guru's passing.",
-      "He is remembered for challenging the oppression of the time and for reforms that supported ordinary farmers, including measures against unjust landholding systems.",
+      "He is remembered for challenging the oppression of the time and is traditionally credited with reforms that supported ordinary farmers.",
       "Captured along with his companions, he was martyred in 1716, remaining steadfast in his faith to the end."
     ],
     contributions: [

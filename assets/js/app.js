@@ -1,7 +1,7 @@
 /* ============================================================================
    VIRSA — Sikh Heritage & Stories  ·  app.js
-   Vanilla JS, no build step, no network calls. Works from a static host or
-   even from a local file. Data comes from the window.VIRSA.* arrays.
+   Vanilla JS, no build step. Core content works from a static host or local
+   file; optional fonts, maps, audio, and source links use the network.
    ========================================================================== */
 (function () {
   "use strict";
@@ -66,10 +66,10 @@
   var NK = "virsa.nitnem.v1";
   function getNitnem() { return store.get(NK, { days: {}, best: 0 }); }
   function saveNitnem(s) { store.set(NK, s); }
-  function dayComplete(rec) { return !!rec && (rec.complete === true || (rec.paaths && rec.paaths.length > 0)); }
+  function dayPracticed(rec) { return !!rec && (rec.complete === true || (rec.paaths && rec.paaths.length > 0)); }
   function completedSet(state) {
     var set = {};
-    for (var k in state.days) { if (state.days.hasOwnProperty(k) && dayComplete(state.days[k])) set[k] = true; }
+    for (var k in state.days) { if (state.days.hasOwnProperty(k) && dayPracticed(state.days[k])) set[k] = true; }
     return set;
   }
   // PURE: given the completion map + a "today" string, return the streak length.
@@ -95,13 +95,6 @@
     var i = arr.indexOf(pid);
     if (i >= 0) arr.splice(i, 1); else arr.push(pid);
     if (arr.length === 0) s.days[t].complete = false;
-    s.best = Math.max(s.best || 0, computeStreak(s, t));
-    saveNitnem(s);
-    return s;
-  }
-  function markAllToday() {
-    var s = getNitnem(), t = today();
-    s.days[t] = { paaths: (D.paaths || []).map(function (p) { return p.id; }), complete: true };
     s.best = Math.max(s.best || 0, computeStreak(s, t));
     saveNitnem(s);
     return s;
@@ -142,18 +135,18 @@
       : "";
     return (
       '<article class="card gurbani-card">' +
-        '<div class="kicker">' + esc(opts.kicker || "Daily Gurbani") + "</div>" +
+        '<div class="kicker">' + esc(opts.kicker || "Daily reflection") + "</div>" +
         gur +
         '<p class="gurbani-translit">' + esc(g.transliteration) + "</p>" +
         '<p class="gurbani-translation">“' + esc(g.translation) + '”</p>' +
         verifyNote +
         '<div class="gurbani-source">' +
           '<span class="badge badge-time">' + esc(gurbaniTypeLabel(g.type)) + "</span>" +
-          "<span>" + esc(g.source) + "</span>" +
+          "<span>" + esc(g.source) + (g.author ? " · " + esc(g.author) : "") + "</span>" +
         "</div>" +
         '<div class="gurbani-reflection"><strong>Reflect &amp; live it:</strong> ' + esc(g.reflection) + "</div>" +
         '<div class="cluster mt-1">' +
-          '<a class="btn btn-sm" href="' + esc(g.verifyUrl) + '" target="_blank" rel="noopener">View original &amp; verify ↗</a>' +
+          '<a class="btn btn-sm" href="' + esc(g.verifyUrl) + '" target="_blank" rel="noopener">View source text ↗</a>' +
           (opts.showAnother ? '<button class="btn btn-sm btn-ghost" id="gurbaniAnother" type="button">Show another ↻</button>' : "") +
         "</div>" +
       "</article>"
@@ -175,9 +168,9 @@
 
   function storyTile(s) {
     var fig = (D.figures || []).find(function (x) { return x.id === s.figureId; });
-    var badge = s.status === "documented"
-      ? '<span class="badge badge-doc">Documented history</span>'
-      : '<span class="badge badge-trad">Traditional Sakhi</span>';
+    var badge = s.status === "historical"
+      ? '<span class="badge badge-doc">Historical event</span>'
+      : '<span class="badge badge-trad">Traditional account</span>';
     return (
       '<a class="tile" href="#/story/' + esc(s.id) + '" data-search="' + esc((s.title + " " + (s.tags || []).join(" ") + " " + (fig ? fig.name : "")).toLowerCase()) + '" data-status="' + esc(s.status) + '">' +
         badge +
@@ -194,7 +187,7 @@
     var gurus = (D.figures || []).filter(function (f) { return f.type === "guru"; }).sort(function (a, b) { return a.order - b.order; });
     var st = getNitnem();
     var streak = computeStreak(st, today());
-    var doneToday = dayComplete(st.days[today()]);
+    var practicedToday = dayPracticed(st.days[today()]);
 
     var miniGurus = gurus.slice(0, 5).map(function (f) {
       return (
@@ -210,20 +203,20 @@
         '<div class="hero">' +
           '<span class="ikonkar gurmukhi" aria-hidden="true">ੴ</span>' +
           "<h1>Discover the roots of Sikhi</h1>" +
-          "<p>Explore the lives of the Gurus, timeless Sakhis, daily Gurbani to live by, and a Nitnem companion — written for kids and adults, with care for accuracy.</p>" +
+          "<p>Explore the lives of the Gurus, timeless Sakhis, Gurbani and Sikh teachings, and a Nitnem companion — written for kids and adults with an accuracy-first approach.</p>" +
           '<div class="hero-cta">' +
             '<a class="btn btn-primary" href="#/figures">Meet the Gurus</a>' +
-            '<a class="btn" href="#/gurbani">Today’s Gurbani</a>' +
+            '<a class="btn" href="#/gurbani">Today’s reflection</a>' +
             '<a class="btn" href="#/nitnem">Start your Nitnem</a>' +
           "</div>" +
         "</div>" +
 
         '<div class="home-grid">' +
-          "<div>" + gurbaniCard(g, { kicker: "Today’s Gurbani" }) + "</div>" +
+          "<div>" + gurbaniCard(g, { kicker: "Today’s reflection" }) + "</div>" +
           "<div class=\"grid\" style=\"gap:14px\">" +
             '<a class="card streak-pill" href="#/nitnem" style="text-decoration:none;color:inherit">' +
               '<span class="streak-flame" aria-hidden="true">' + (streak > 0 ? "🔥" : "🪔") + "</span>" +
-              "<span><span class=\"streak-num\">" + streak + '</span> <span class="streak-sub">day' + (streak === 1 ? "" : "s") + " streak " + (doneToday ? "· done today ✓" : "· not yet today") + "</span></span>" +
+              "<span><span class=\"streak-num\">" + streak + '</span> <span class="streak-sub">day' + (streak === 1 ? "" : "s") + " practice streak " + (practicedToday ? "· logged today ✓" : "· not logged yet") + "</span></span>" +
             "</a>" +
             '<article class="card mini-card">' +
               "<h2>The Ten Gurus</h2>" +
@@ -242,7 +235,7 @@
         "</div>" +
 
         '<div class="note-box mt-2">' +
-          "<strong>Built with care for accuracy.</strong> Stories are clearly marked as <em>documented history</em> or <em>traditional Sakhi</em>, and every entry links to a trusted source so you can verify and read more. " +
+          "<strong>Built with an accuracy-first approach.</strong> Stories distinguish <em>historical events</em> from <em>traditional accounts</em>, disputed dates are marked, and references are provided as starting points for further study. " +
           '<a class="text-link" href="#/about">Read about our sources →</a>' +
         "</div>" +
       "</section>";
@@ -280,14 +273,14 @@
     app.innerHTML =
       '<section class="view-enter">' +
         '<div class="section-head"><div class="eyebrow">Sakhis &amp; History</div><h1>Stories of the Gurus &amp; the Khalsa</h1>' +
-          '<p class="lede">Each story is labelled so you always know what you are reading: <span class="badge badge-doc">Documented history</span> or <span class="badge badge-trad">Traditional Sakhi</span> (a cherished account passed down in tradition).</p></div>' +
+          '<p class="lede">Each story is labelled as a <span class="badge badge-doc">Historical event</span> or <span class="badge badge-trad">Traditional account</span>. Historical labels apply to the core event; narrative details can still differ across sources.</p></div>' +
         '<div class="toolbar">' +
           '<label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>' +
             '<input id="stSearch" type="search" placeholder="Search stories, people, themes…" aria-label="Search stories" /></label>' +
           '<div class="filters" id="stFilters">' +
             '<button class="filter-chip" data-f="all" aria-pressed="true" type="button">All</button>' +
-            '<button class="filter-chip" data-f="documented" aria-pressed="false" type="button">Documented</button>' +
-            '<button class="filter-chip" data-f="traditional" aria-pressed="false" type="button">Traditional Sakhi</button>' +
+            '<button class="filter-chip" data-f="historical" aria-pressed="false" type="button">Historical</button>' +
+            '<button class="filter-chip" data-f="traditional" aria-pressed="false" type="button">Traditional</button>' +
           "</div>" +
         "</div>" +
         '<div class="grid grid-cards" id="stGrid">' + tiles + "</div>" +
@@ -332,8 +325,8 @@
             '<div class="detail-title">' + esc(f.title) + "</div></div>" +
         "</div>" +
         '<div class="meta-row">' +
-          (f.born ? '<div class="meta-item"><b>Born</b>' + esc(f.born) + "</div>" : "") +
-          (f.passed && f.passed !== "—" ? '<div class="meta-item"><b>Joti Jot</b>' + esc(f.passed) + "</div>" : "") +
+          (f.born && f.born !== "—" ? '<div class="meta-item"><b>' + esc(bornLabel(f)) + "</b>" + esc(f.born) + "</div>" : "") +
+          (f.passed && f.passed !== "—" ? '<div class="meta-item"><b>' + esc(passedLabel(f)) + "</b>" + esc(f.passed) + "</div>" : "") +
           (f.birthplace ? '<div class="meta-item"><b>Place</b>' + esc(f.birthplace) + "</div>" : "") +
         "</div>" +
         '<p class="lede mt-1">' + esc(f.relevance) + "</p>" +
@@ -343,7 +336,7 @@
         kidsCallout +
         relatedBlock +
         '<hr class="divider" />' +
-        '<div class="cluster"><a class="btn btn-sm" href="' + esc(f.verifyUrl) + '" target="_blank" rel="noopener">Read more &amp; verify ↗</a>' +
+        '<div class="cluster"><a class="btn btn-sm" href="' + esc(f.verifyUrl) + '" target="_blank" rel="noopener">Further reading ↗</a>' +
           '<a class="btn btn-sm btn-ghost" href="#/about">About our sources</a></div>' +
       "</section>";
   }
@@ -353,9 +346,9 @@
     if (!s) return notFound();
     var kids = kidsOn();
     var fig = (D.figures || []).find(function (x) { return x.id === s.figureId; });
-    var badge = s.status === "documented"
-      ? '<span class="badge badge-doc">Documented history</span>'
-      : '<span class="badge badge-trad">Traditional Sakhi</span>';
+    var badge = s.status === "historical"
+      ? '<span class="badge badge-doc">Historical event</span>'
+      : '<span class="badge badge-trad">Traditional account</span>';
 
     var body = kids
       ? '<div class="callout kids"><span class="label">Simple version for younger readers</span><p>' + esc(s.forKids) + "</p></div>"
@@ -375,7 +368,7 @@
         (!kids && s.gurbani ? '<div class="callout gurbani-link"><span class="label">Connection to Gurbani</span><p>' + esc(s.gurbani) + "</p></div>" : "") +
         (!kids && s.forKids ? '<div class="callout kids"><span class="label">For younger readers</span><p>' + esc(s.forKids) + "</p></div>" : "") +
         '<hr class="divider" />' +
-        '<div class="cluster"><a class="btn btn-sm" href="' + esc(s.verifyUrl) + '" target="_blank" rel="noopener">Read more &amp; verify ↗</a>' +
+        '<div class="cluster"><a class="btn btn-sm" href="' + esc(s.verifyUrl) + '" target="_blank" rel="noopener">Further reading ↗</a>' +
           (fig ? '<a class="btn btn-sm btn-ghost" href="#/figure/' + esc(fig.id) + '">More about ' + esc(shortName(fig)) + "</a>" : "") + "</div>" +
       "</section>";
   }
@@ -396,15 +389,15 @@
 
     app.innerHTML =
       '<section class="view-enter">' +
-        '<div class="section-head"><div class="eyebrow">Wisdom to live by</div><h1>Daily Gurbani</h1>' +
-          '<p class="lede">A verse to carry through your day, with a short reflection on how to live it. Tap any card below to read its reflection.</p></div>' +
-        '<div id="todayGurbani">' + gurbaniCard(g, { kicker: "Today’s Gurbani", showAnother: true }) + "</div>" +
+        '<div class="section-head"><div class="eyebrow">Wisdom to live by</div><h1>Gurbani &amp; Sikh teachings</h1>' +
+          '<p class="lede">A daily reflection drawn from Gurbani or a clearly labelled Sikh prayer, teaching, or jaikara. Tap any card below to read its reflection.</p></div>' +
+        '<div id="todayGurbani">' + gurbaniCard(g, { kicker: "Today’s reflection", showAnother: true }) + "</div>" +
         '<div class="note-box mt-1" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">' +
           '<span>🌅 <strong>Today’s Hukamnama</strong> — the daily message read from Sri Guru Granth Sahib Ji at Sri Harmandir Sahib.</span>' +
           '<a class="btn btn-sm" href="https://www.sikhnet.com/hukam" target="_blank" rel="noopener">Read today’s Hukamnama ↗</a>' +
         "</div>" +
         '<h3 class="related-head">The full collection</h3>' +
-        '<p class="streak-note" style="margin-top:-6px">Each quote is labelled by source. Translations are interpretive; tap “View original” on any verse to read it as written and verify it.</p>' +
+        '<p class="streak-note" style="margin-top:-6px">Each item is labelled by type and source. Translations are interpretive; use “View source text” to read SGGS lines in context.</p>' +
         '<div class="grid grid-cards" id="gurbaniGrid">' + list + "</div>" +
       "</section>";
 
@@ -413,7 +406,7 @@
     qsa("#gurbaniGrid [data-idx]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         gurbaniOverride = parseInt(btn.getAttribute("data-idx"), 10);
-        byId("todayGurbani").innerHTML = gurbaniCard(dailyGurbani(), { kicker: "Selected verse", showAnother: true });
+        byId("todayGurbani").innerHTML = gurbaniCard(dailyGurbani(), { kicker: "Selected reflection", showAnother: true });
         var a = byId("gurbaniAnother"); if (a) a.addEventListener("click", reshuffleGurbani);
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
@@ -428,7 +421,7 @@
     gurbaniOverride = next;
     var host = byId("todayGurbani");
     if (host) {
-      host.innerHTML = gurbaniCard(dailyGurbani(), { kicker: "A verse for you", showAnother: true });
+      host.innerHTML = gurbaniCard(dailyGurbani(), { kicker: "A reflection for you", showAnother: true });
       var a = byId("gurbaniAnother"); if (a) a.addEventListener("click", reshuffleGurbani);
     }
   }
@@ -439,9 +432,9 @@
     app.innerHTML =
       '<section class="view-enter">' +
         '<div class="section-head"><div class="eyebrow">Daily practice</div><h1>Nitnem — Daily Paaths</h1>' +
-          '<p class="lede">The banis many Sikhs recite each day. Listen, read, and check each one off to build your streak. Traditions vary on the exact set — follow the guidance of your family and Gurdwara.</p></div>' +
+          '<p class="lede">The banis many Sikhs recite each day. Listen, read, and check off what you actually practised. Traditions vary on the exact set — follow the guidance of your family, Gurdwara, and chosen maryada.</p></div>' +
         '<div id="streakHero">' + streakHeroHTML() + "</div>" +
-        '<p class="streak-note">A day counts toward your streak once you complete at least one bani. Your progress is saved privately on this device only.</p>' +
+        '<p class="streak-note">A day counts toward your practice streak once you check at least one bani. Your progress is saved privately on this device only.</p>' +
         '<div class="paath-list" id="paathList">' + paaths.map(paathRow).join("") + "</div>" +
         '<div class="note-box mt-2"><strong>Read the full text &amp; hear more reciters.</strong> ' +
           'For complete Gurmukhi text, transliteration, and translations — and recordings from many respected reciters — visit ' +
@@ -458,16 +451,14 @@
     var rec = st.days[today()] || { paaths: [] };
     var count = (rec.paaths || []).length;
     var totalP = (D.paaths || []).length;
-    var done = dayComplete(rec);
     return (
       '<div class="streak-hero">' +
         '<div class="streak-big"><span class="flame" aria-hidden="true">' + (streak > 0 ? "🔥" : "🪔") + "</span>" +
-          '<span><span class="n" id="streakN">' + streak + '</span><br><span class="lbl">day' + (streak === 1 ? "" : "s") + " in a row</span></span></div>" +
+          '<span><span class="n" id="streakN">' + streak + '</span><br><span class="lbl">practice day' + (streak === 1 ? "" : "s") + " in a row</span></span></div>" +
         '<div class="streak-meta">' +
           '<div><b id="streakBest">' + (st.best || 0) + "</b>best streak</div>" +
           '<div><b id="streakCount">' + count + " / " + totalP + "</b>banis today</div>" +
         "</div>" +
-        '<button class="btn btn-primary streak-today-btn" id="markAllBtn" type="button">' + (done ? "✓ Completed today" : "Mark today complete") + "</button>" +
       "</div>"
     );
   }
@@ -495,10 +486,10 @@
             '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></button>' +
           '<div class="paath-id"><h3>' + esc(p.name) + ' <span class="gurmukhi" lang="pa">' + esc(p.gurmukhi || "") + "</span></h3>" +
             '<div class="sub"><span class="badge badge-time">' + esc(p.time) + "</span> · " + esc(p.lengthApprox || "") + " · " + esc(p.author) + "</div></div>" +
-          '<button class="paath-expand" type="button" aria-label="Show details" data-expand="' + esc(p.id) + '">' +
+          '<button class="paath-expand" type="button" aria-label="Show details" aria-expanded="false" aria-controls="paath-body-' + esc(p.id) + '" data-expand="' + esc(p.id) + '">' +
             '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>' +
         "</div>" +
-        '<div class="paath-body"><p>' + esc(p.description) + "</p>" +
+        '<div class="paath-body" id="paath-body-' + esc(p.id) + '"><p>' + esc(p.description) + "</p>" +
           "<p><b>When:</b> " + esc(p.whenToRead) + "</p>" +
           audio +
         "</div>" +
@@ -519,16 +510,10 @@
     });
     qsa("[data-expand]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        btn.closest(".paath").classList.toggle("open");
+        var open = btn.closest(".paath").classList.toggle("open");
+        btn.setAttribute("aria-expanded", open);
+        btn.setAttribute("aria-label", open ? "Hide details" : "Show details");
       });
-    });
-    var markBtn = byId("markAllBtn");
-    if (markBtn) markBtn.addEventListener("click", function () {
-      var st = getNitnem(); var done = dayComplete(st.days[today()]);
-      if (done) { // allow toggling the whole day off
-        var s = getNitnem(); s.days[today()] = { paaths: [], complete: false }; saveNitnem(s);
-      } else { markAllToday(); }
-      viewNitnem();
     });
     // audio error fallback
     qsa(".paath audio").forEach(function (au) {
@@ -549,13 +534,6 @@
   function refreshStreakHero() {
     var host = byId("streakHero");
     if (host) host.innerHTML = streakHeroHTML();
-    var markBtn = byId("markAllBtn");
-    if (markBtn) markBtn.addEventListener("click", function () {
-      var st = getNitnem(); var done = dayComplete(st.days[today()]);
-      if (done) { var s = getNitnem(); s.days[today()] = { paaths: [], complete: false }; saveNitnem(s); }
-      else { markAllToday(); }
-      viewNitnem();
-    });
   }
 
   function viewAbout() {
@@ -564,20 +542,20 @@
         '<p class="greeting gurmukhi" lang="pa">ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖ਼ਾਲਸਾ, ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਿਹ</p>' +
         '<p class="greeting-translit">Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh</p>' +
         '<div class="section-head"><div class="eyebrow">Our promise</div><h1>About Virsa &amp; our sources</h1>' +
-          '<p class="lede">Virsa exists to make the wealth of Sikh history and Gurbani accessible to a new generation — especially where language has been a barrier — without ever compromising on accuracy.</p></div>' +
+          '<p class="lede">Virsa exists to make Sikh history and Gurbani accessible to a new generation — especially where language has been a barrier — through an accuracy-first, openly revisable approach.</p></div>' +
 
         '<div class="about-block"><h2>How we protect accuracy</h2>' +
           '<ul class="list-clean">' +
-            "<li><strong>Documented vs. traditional.</strong> Every story is labelled as <em>documented history</em> or a <em>traditional Sakhi</em> — a cherished account passed down in the Sikh tradition that carries deep meaning, but is not a court record.</li>" +
+            "<li><strong>Historical vs. traditional.</strong> A historical label means the core event is attested; it does not mean every narrative detail is independently documented. Traditional accounts are identified clearly and treated with respect.</li>" +
             "<li><strong>An honest note on Gurbani.</strong> Sri Guru Granth Sahib Ji is spiritual and devotional wisdom — not a book of historical narratives. Where we mention a “connection to Gurbani”, we mean the values a story reflects or the hymns a Guru composed.</li>" +
-            "<li><strong>Verify everything.</strong> Every figure, story, and verse links out to a trusted resource so you can read further and confirm for yourself.</li>" +
+            "<li><strong>Follow the evidence.</strong> Gurbani entries link to exact angs. Historical links are starting points for further study, not proof by themselves; sources can differ in detail and interpretation.</li>" +
             "<li><strong>Translations are interpretive.</strong> Gurbani cannot be translated perfectly; our translations aim to convey meaning, and we point you to the original Gurmukhi every time.</li>" +
           "</ul></div>" +
 
         '<div class="about-block"><h2>On images</h2>' +
-          "<p>Out of respect for the widely-held Sikh tradition that the Gurus should not be depicted — and to avoid ever showing the wrong person — Virsa uses dignified symbols and calligraphy rather than imagined portraits.</p></div>" +
+          "<p>No verified contemporary likeness exists for most Gurus, and Sikh views on depiction differ. Virsa therefore uses symbols and calligraphy rather than presenting imagined portraits as historical likenesses.</p></div>" +
 
-        '<div class="about-block"><h2>Trusted resources</h2>' +
+        '<div class="about-block"><h2>Further-reading resources</h2>' +
           '<div class="source-links">' +
             '<a class="btn btn-sm" href="https://www.sikhitothemax.org/" target="_blank" rel="noopener">SikhiToTheMax ↗</a>' +
             '<a class="btn btn-sm" href="https://www.searchgurbani.com/" target="_blank" rel="noopener">SearchGurbani ↗</a>' +
@@ -586,7 +564,7 @@
             '<a class="btn btn-sm" href="https://www.srigranth.org/" target="_blank" rel="noopener">SriGranth ↗</a>' +
           "</div></div>" +
 
-        '<div class="note-box"><strong>Help us keep it perfect.</strong> If you are a Granthi, scholar, or knowledgeable reader and spot anything that should be corrected, that feedback is welcome and valued. This collection is designed to grow and improve over time.</div>' +
+        '<div class="note-box"><strong>Help us improve it.</strong> If you are a Granthi, scholar, historian, or knowledgeable reader and spot anything that should be corrected, please share the claim, proposed correction, and strongest available source.</div>' +
 
         '<div class="about-block mt-2"><h2>Your data</h2>' +
           "<p>Your Nitnem streak and settings are stored only on this device, never sent anywhere. You can clear them any time.</p>" +
@@ -641,6 +619,16 @@
   function shortName(f) {
     // "Guru Nanak Dev Ji" -> "Guru Nanak Dev Ji"; keep it simple & respectful
     return f.name;
+  }
+
+  function bornLabel(f) {
+    return f.type === "scripture" ? "Compilation / Guruship" : "Born";
+  }
+
+  function passedLabel(f) {
+    var tags = f.tags || [];
+    if (tags.indexOf("martyr") >= 0 || tags.indexOf("martyrs") >= 0) return "Shaheedi";
+    return f.type === "guru" ? "Joti Jot" : "Passed";
   }
 
   /* ------------------------------ More hub ------------------------------- */
@@ -752,9 +740,13 @@
     _leaflet = new Promise(function (resolve) {
       var css = document.createElement("link");
       css.rel = "stylesheet"; css.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+      css.integrity = "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=";
+      css.crossOrigin = "anonymous";
       document.head.appendChild(css);
       var s = document.createElement("script");
       s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+      s.integrity = "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=";
+      s.crossOrigin = "anonymous";
       s.onload = function () { resolve(true); };
       s.onerror = function () { resolve(false); };
       document.head.appendChild(s);
@@ -835,11 +827,19 @@
     // theme
     var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     var theme = store.get("virsa.theme", prefersDark ? "dark" : "light");
+    var themeBtn = byId("themeToggle");
+    function syncTheme() {
+      var next = theme === "dark" ? "light" : "dark";
+      themeBtn.setAttribute("aria-label", "Switch to " + next + " mode");
+      themeBtn.setAttribute("title", "Switch to " + next + " mode");
+    }
     document.documentElement.dataset.theme = theme;
-    byId("themeToggle").addEventListener("click", function () {
+    syncTheme();
+    themeBtn.addEventListener("click", function () {
       theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
       document.documentElement.dataset.theme = theme;
       store.set("virsa.theme", theme);
+      syncTheme();
     });
     // kids mode
     var kidsBtn = byId("kidsToggle");

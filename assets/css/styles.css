@@ -20,7 +20,7 @@
   --ink-soft: #5a6068;
   --line: #e7ddc9;
   --accent: var(--kesari);
-  --accent-ink: #b4610f;
+  --accent-ink: #ad590d;
   --ring: rgba(224,122,31,.35);
   --shadow: 0 6px 22px rgba(27,42,74,.08), 0 2px 6px rgba(27,42,74,.06);
   --shadow-sm: 0 2px 8px rgba(27,42,74,.07);
@@ -73,7 +73,7 @@ img { max-width: 100%; }
 
 .skip-link {
   position: absolute; left: -999px; top: 0; z-index: 100;
-  background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 10px 0;
+  background: var(--accent); color: var(--navy); padding: 10px 16px; border-radius: 0 0 10px 0;
 }
 .skip-link:focus { left: 0; }
 
@@ -92,7 +92,7 @@ img { max-width: 100%; }
 .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: inherit; }
 .brand-mark {
   font-family: var(--font-gurmukhi);
-  font-size: 30px; line-height: 1; color: #fff;
+  font-size: 30px; line-height: 1; color: var(--navy);
   background: linear-gradient(150deg, var(--kesari), var(--gold));
   width: 46px; height: 46px; border-radius: 13px;
   display: grid; place-items: center;
@@ -142,8 +142,8 @@ html[data-theme="dark"] .ico-sun { d: path("M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z")
   padding: 11px 16px; cursor: pointer; text-decoration: none; transition: .18s;
 }
 .btn:hover { border-color: var(--accent); color: var(--accent-ink); transform: translateY(-1px); }
-.btn-primary { background: linear-gradient(150deg, var(--kesari), var(--kesari-soft)); color: #fff; border-color: transparent; box-shadow: var(--shadow-sm); }
-.btn-primary:hover { color: #fff; filter: brightness(1.05); }
+.btn-primary { background: linear-gradient(150deg, var(--kesari), var(--kesari-soft)); color: var(--navy); border-color: transparent; box-shadow: var(--shadow-sm); }
+.btn-primary:hover { color: var(--navy); filter: brightness(1.05); }
 .btn-ghost { background: transparent; }
 .btn-sm { padding: 8px 12px; font-size: .84rem; border-radius: 10px; }
 .btn-block { width: 100%; }
@@ -247,7 +247,7 @@ html[data-theme="dark"] .badge-time { color: #9db4e6; background: color-mix(in s
   border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
   border-radius: 999px; padding: 8px 14px; font: inherit; font-size: .84rem; font-weight: 600; cursor: pointer; transition: .15s;
 }
-.filter-chip[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: transparent; }
+.filter-chip[aria-pressed="true"] { background: var(--accent); color: var(--navy); border-color: transparent; }
 
 /* ------------------------------- Detail --------------------------------- */
 .back-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; color: var(--ink-soft); margin-bottom: 14px; }

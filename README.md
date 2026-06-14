@@ -1,78 +1,83 @@
 # Virsa — Sikh Heritage & Stories
 
-A mobile-friendly web app that makes Sikh history, the lives of the Gurus,
-timeless Sakhis, daily Gurbani, and the Nitnem accessible to a new
-generation — built with care for **accuracy** above all.
+Virsa is a mobile-friendly, accuracy-first guide to Sikh history, traditional
+accounts, Gurbani, Sikh teachings, and daily Nitnem practice.
 
 > **ੴ Virsa** (ਵਿਰਸਾ) means *heritage / inheritance* — our roots, passed on.
 
----
-
-## What's inside
+## What is inside
 
 | Section | What it does |
 |---|---|
-| **Home** | A daily Gurbani verse, your Nitnem streak, and the Ten Gurus at a glance. |
-| **Gurus & Figures** | The Ten Gurus, Sri Guru Granth Sahib Ji (the eternal Guru), and key devotees, warriors, and family — with searchable, filterable cards. |
-| **Stories** | Sakhis and historical events, each clearly labelled **Documented history** or **Traditional Sakhi**, with the teaching it carries. |
-| **Daily Gurbani** | A rotating verse with a practical life-reflection, plus the full collection — every quote labelled by source. |
-| **Nitnem** | The daily banis with in-app audio, links to more recordings, and a **day-streak tracker** saved privately on the device. |
-| **About** | How accuracy is protected, the decision on images, trusted resources, and data controls. |
+| **Home** | A daily reflection, practice streak, and the Ten Gurus at a glance. |
+| **Gurus & Figures** | The Ten Gurus, Sri Guru Granth Sahib Ji, and key historical figures. |
+| **Stories** | Historical events and traditional accounts, labelled separately. |
+| **Wisdom** | Gurbani lines, Ardas, teachings, and jaikara, each labelled by type and source. |
+| **Nitnem** | Seven commonly recited banis, listening links, and a local practice tracker. |
+| **More** | Festivals, the Five Ks, a glossary, historical Gurdwaras, and source notes. |
 
-Extra touches added on top of the brief: **Kids mode** (a simple retelling for
-younger readers on every figure & story), **light/dark themes**, full keyboard
-accessibility, and an **offline-friendly** build (no server, no tracking).
+Kids mode, light/dark themes, keyboard access, and responsive layouts are built
+in. The core app is static and has no project backend or analytics.
 
----
+Optional Google Fonts, maps, audio, and external references use the network.
+Nitnem progress and settings stay in the browser's local storage.
 
-## Run it locally
+## Accuracy approach
 
-It's a static site — no build step, no dependencies. Any static server works.
+Virsa is a doorway, not an authority.
+
+- SGGS lines link to the relevant ang for reading in context.
+- Ardas, jaikara, and Sikh principles are never labelled as SGGS verses.
+- Stories distinguish historical events from traditional accounts.
+- Disputed chronology is shown rather than hidden.
+- Historical links are further-reading starting points, not proof by themselves.
+- Translations and historical interpretations remain open to correction.
+
+Read [CONTENT-NOTES.md](CONTENT-NOTES.md) before changing or publishing content.
+Corrections supported by strong sources are welcome; see
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Run locally
+
+There is no build step and no package dependency.
 
 ```powershell
-# From this folder:
 python -m http.server 8125
-# then open http://localhost:8125
 ```
 
-You can also just open `index.html` in a browser (audio + streak still work).
+Then open `http://localhost:8125`.
 
-## Deploy it (free)
+## Validate content
 
-Because it's fully static, it drops straight onto **GitHub Pages** or **Netlify**:
+The validator uses Node.js built-ins only:
 
-- **GitHub Pages:** push this folder to a repo → Settings → Pages → deploy from
-  the `main` branch root. Done.
-- **Netlify:** drag-and-drop this folder onto the Netlify dashboard.
-
----
-
-## How the content is structured (easy to edit & grow)
-
-All content lives in plain data files — **no code knowledge needed** to add or
-correct entries. Just edit the arrays:
-
+```powershell
+node scripts/validate-content.mjs
 ```
+
+It checks syntax, IDs, relationships, supported evidence/type labels, required
+fields, HTTPS source links, and SGGS ang references. GitHub Actions runs it on
+every push and pull request.
+
+## Content structure
+
+All content lives in plain JavaScript data files:
+
+```text
 assets/js/
-  data-figures.js   ← the Gurus & people
-  data-stories.js   ← Sakhis & events (each tagged "documented" or "traditional")
-  data-gurbani.js   ← daily verses (each tagged ggs / ardas / principle / jaikara)
-  data-paaths.js    ← Nitnem banis + audio links
+  data-figures.js
+  data-stories.js
+  data-gurbani.js
+  data-paaths.js
+  data-fives.js
+  data-festivals.js
+  data-glossary.js
+  data-gurdwaras.js
 ```
 
-To **add a story**, copy an existing object in `data-stories.js`, change the
-fields, and save. To **fix a fact**, edit that object. The app picks it up on
-reload. See `CONTENT-NOTES.md` for the accuracy policy and the fields each
-object uses.
+The interface is in `assets/js/app.js` and `assets/css/styles.css`.
 
----
+## Deploy
 
-## A word on accuracy
-
-This app is a **doorway**, not an authority. Stories are labelled by type,
-translations are interpretive, and every entry links out to a trusted source
-(SikhiToTheMax, SearchGurbani, SikhNet, SikhiWiki, SriGranth). **Please have a
-Granthi or knowledgeable reader review the content before publishing it widely.**
-See `CONTENT-NOTES.md`.
-
-🙏 *Simran · Seva · Chardi Kala*
+The repository can be served by any static host, including GitHub Pages or
+Netlify. No server-side configuration is required.

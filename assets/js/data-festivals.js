@@ -130,7 +130,7 @@ window.VIRSA.festivals = [
     kind: "Shaheedi (martyrdom)",
     whenText: "Late December (month of Poh)",
     commemorates:
-      "The martyrdom of the four Sahibzade and Mata Gujri Ji in December 1705 — the elder Sahibzade at Chamkaur and the younger at Sirhind.",
+      "The martyrdom of the four Sahibzade and Mata Gujri Ji during the winter events dated 1704 or 1705 by different chronologies.",
     observance:
       "Days of solemn remembrance, with the Jor Mela at Gurdwara Fatehgarh Sahib, kirtan, and katha recalling their sacrifice.",
     significance:
@@ -156,7 +156,7 @@ window.VIRSA.festivals = [
     kind: "Shaheedi & Mela",
     whenText: "Around 14 January (start of the month of Magh; nearly fixed)",
     commemorates:
-      "The Forty Liberated Ones (Chali Mukte) who gave their lives at the Battle of Muktsar in 1705, and the courage of Mai Bhago Ji.",
+      "The Forty Liberated Ones (Chali Mukte) and the courage of Mai Bhago Ji at the Battle of Muktsar, dated 1705 or 1706 by different chronologies.",
     observance:
       "A great mela at Gurdwara Sri Muktsar Sahib, with kirtan, processions, and remembrance of the Forty.",
     significance:

@@ -1,6 +1,6 @@
 /* ============================================================================
    VIRSA — Sikh Heritage & Stories
-   data-gurbani.js  —  Daily Gurbani quotes, reflections, and life guidance.
+   data-gurbani.js  —  Gurbani lines, Sikh teachings, and daily reflections.
 
    HOW THIS IS KEPT HONEST
    ------------------------
@@ -12,10 +12,11 @@
    - Gurmukhi is included ONLY where it can be given with confidence. Where it is
      omitted, the transliteration and translation are shown and the reader is
      pointed to the original. Translations of Gurbani are always interpretive.
-   - Every quote links to SikhiToTheMax so the exact original can be verified.
+   - Every SGGS quote links to its ang on SearchGurbani so the original can be
+     checked in context. Other items link to a relevant reference.
 
-   Before publishing, please have the Gurmukhi text and translations reviewed by
-   a Granthi or knowledgeable reader. This bank is easy to extend — add objects.
+   Please continue to have the Gurmukhi text and translations reviewed by
+   Granthis and knowledgeable readers. This bank is easy to extend — add objects.
    ========================================================================== */
 
 window.VIRSA = window.VIRSA || {};
@@ -30,12 +31,12 @@ window.VIRSA.gurbani = [
       "Ik Onkar Sat Naam Kartaa Purakh Nirbhau Nirvair Akaal Moorat Ajoonee Saibhang Gur Prasaad.",
     translation:
       "There is One Universal Creator. Truth is the Name. The Creative Being, without fear, without hatred, the timeless Form, beyond birth, self-existent — known by the Guru's grace.",
-    source: "Mool Mantar · opening of Japji Sahib · Sri Guru Granth Sahib Ji",
+    source: "Mool Mantar · Japji Sahib · Ang 1 · Sri Guru Granth Sahib Ji",
     author: "Guru Nanak Dev Ji",
     theme: "Oneness",
     reflection:
       "Begin with the foundation: one Creator lives in everyone and everything. If that is true, then no person is your enemy and none is beneath you. Carry this single thought into every interaction today.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=2"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/1"
   },
   {
     id: "pavan-guru",
@@ -44,12 +45,12 @@ window.VIRSA.gurbani = [
     transliteration: "Pavan Guru, Paanee Pitaa, Maataa Dharat Mahat.",
     translation:
       "Air is the Guru, Water is the Father, and the great Earth is the Mother of all.",
-    source: "Salok, close of Japji Sahib · Sri Guru Granth Sahib Ji",
+    source: "Salok, close of Japji Sahib · Ang 8 · Sri Guru Granth Sahib Ji",
     author: "Guru Nanak Dev Ji",
     theme: "Nature & gratitude",
     reflection:
       "The very air, water, and earth that sustain you are spoken of as teacher and parent. Treat the natural world with the love you would give family — and pause today to be grateful for what keeps you alive.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=10"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/8"
   },
   {
     id: "hukam-rajai",
@@ -57,13 +58,13 @@ window.VIRSA.gurbani = [
     gurmukhi: "ਹੁਕਮਿ ਰਜਾਈ ਚਲਣਾ ਨਾਨਕ ਲਿਖਿਆ ਨਾਲਿ ॥",
     transliteration: "Hukam Rajaaee Chalnaa, Naanak Likhiaa Naal.",
     translation:
-      "Walk in harmony with the Divine Will, O Nanak — it is written within you.",
-    source: "Japji Sahib (1st Pauri) · Sri Guru Granth Sahib Ji",
+      "Walk in harmony with Hukam, the Divine Will, O Nanak — it is written along with us.",
+    source: "Japji Sahib (1st Pauri) · Ang 1 · Sri Guru Granth Sahib Ji",
     author: "Guru Nanak Dev Ji",
     theme: "Acceptance",
     reflection:
       "So much of our stress comes from fighting what we cannot change. To 'walk in the Hukam' is to do your honest best, then accept the outcome with peace instead of resentment. Where can you loosen your grip today?",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=2"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/1"
   },
   {
     id: "mithat-neevi",
@@ -72,12 +73,12 @@ window.VIRSA.gurbani = [
     transliteration: "Mithat Neevee Naanakaa, Gun Changiaaeeaa Tat.",
     translation:
       "Sweetness and humility, O Nanak, are the essence of all virtues and goodness.",
-    source: "Asa Di Var · Sri Guru Granth Sahib Ji",
+    source: "Asa Di Var · Ang 470 · Sri Guru Granth Sahib Ji",
     author: "Guru Nanak Dev Ji",
     theme: "Humility",
     reflection:
       "Not cleverness, not strength — sweetness and humility are named the essence of goodness. Today, choose the gentle word and the humble posture, especially when you would rather be sharp.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=400"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/470"
   },
   {
     id: "ek-pita",
@@ -86,12 +87,12 @@ window.VIRSA.gurbani = [
     transliteration: "Ek Pitaa Ekas Ke Ham Baarik.",
     translation:
       "One Father — we are all the children of the One.",
-    source: "Raag Sorath · Sri Guru Granth Sahib Ji",
+    source: "Raag Sorath · Ang 611 · Sri Guru Granth Sahib Ji",
     author: "Guru Arjan Dev Ji",
     theme: "Equality & family",
     reflection:
       "If we share one Parent, then every stranger is, in truth, family. Let that change how you speak to someone you would normally overlook today — the cashier, the newcomer, the person you disagree with.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=2454"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/611"
   },
   {
     id: "man-tu-jot",
@@ -100,12 +101,12 @@ window.VIRSA.gurbani = [
     transliteration: "Man Toon Jot Saroop Hai, Aapnaa Mool Pachhaan.",
     translation:
       "O my mind, you are the embodiment of the Divine Light — recognise your own origin.",
-    source: "Raag Aasaa · Sri Guru Granth Sahib Ji",
+    source: "Raag Aasaa · Ang 441 · Sri Guru Granth Sahib Ji",
     author: "Guru Amar Das Ji",
     theme: "Self-worth",
     reflection:
       "On days you feel small or unworthy, this is the reminder: your true nature is light, not your mistakes. Recognising your own worth makes it easier to see it in others, too.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=441"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/441"
   },
   {
     id: "prabh-simran",
@@ -114,27 +115,12 @@ window.VIRSA.gurbani = [
     transliteration: "Prabh Kaa Simran Sabh Te Oochaa.",
     translation:
       "Remembrance of the Divine is the highest of all.",
-    source: "Sukhmani Sahib · Sri Guru Granth Sahib Ji",
+    source: "Sukhmani Sahib · Ang 263 · Sri Guru Granth Sahib Ji",
     author: "Guru Arjan Dev Ji",
     theme: "Inner peace",
     reflection:
       "Sukhmani means 'the jewel of peace'. Even a minute of stillness — breathing, remembering the Divine — can steady a restless mind. Try one quiet minute before the day rushes in.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=1234"
-  },
-  {
-    id: "kabir-birth",
-    type: "ggs",
-    gurmukhi: null,
-    transliteration:
-      "Kabeeraa, Jab Ham Paidaa Hue, Jag Hase Ham Roye; Aisee Karnee Kar Chalo, Ham Hase Jag Roye.",
-    translation:
-      "Kabir says: when you were born, the world rejoiced and you cried. Live in such a way that, when you depart, you depart smiling and the world weeps for you.",
-    source: "Saloks of Bhagat Kabir Ji · Sri Guru Granth Sahib Ji",
-    author: "Bhagat Kabir Ji",
-    theme: "A life well-lived",
-    reflection:
-      "A life of kindness and honesty is its own legacy. Ask yourself a gentle question today: if this were the measure, what small good could I do that someone would remember?",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=4647"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/263"
   },
   {
     id: "farid-judge",
@@ -144,12 +130,12 @@ window.VIRSA.gurbani = [
       "Fareedaa Je Too Akal Lateef, Kaale Likh Na Lekh; Aapnarhe Girheevaan Maahi Sir Neevaan Kar Dekh.",
     translation:
       "Fareed, if you have a keen mind, do not write notes against others. Instead, bow your head and look within your own collar.",
-    source: "Saloks of Sheikh Farid Ji · Sri Guru Granth Sahib Ji",
+    source: "Saloks of Sheikh Farid Ji · Ang 1378 · Sri Guru Granth Sahib Ji",
     author: "Sheikh Farid Ji",
     theme: "Not judging others",
     reflection:
       "Before criticising someone, this verse turns the gaze inward. Today, when you catch yourself judging, pause and ask honestly where you fall short in the same way. Compassion usually follows.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=4639"
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/1378"
   },
   {
     id: "nanak-naam-chardikala",
@@ -214,12 +200,12 @@ window.VIRSA.gurbani = [
     transliteration: "Sarab Rog Kaa Aukhad Naam.",
     translation:
       "The Naam — the Divine Name — is the remedy for every ailment.",
-    source: "Sukhmani Sahib · Sri Guru Granth Sahib Ji",
+    source: "Sukhmani Sahib · Ang 274 · Sri Guru Granth Sahib Ji",
     author: "Guru Arjan Dev Ji",
     theme: "Healing & calm",
     reflection:
-      "When the mind is anxious, returning gently to remembrance — a single word, a breath, 'Waheguru' — is offered as medicine. You do not have to fix everything at once; you only have to come back to centre.",
-    verifyUrl: "https://www.sikhitothemax.org/shabad?id=1234"
+      "This line speaks to the spiritual healing of Naam. In distress, remembrance can steady the mind alongside appropriate support; it is not a replacement for medical or mental-health care.",
+    verifyUrl: "https://www.searchgurbani.com/guru-granth-sahib/ang/274"
   },
   {
     id: "jo-bole-so-nihal",

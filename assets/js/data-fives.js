@@ -24,7 +24,7 @@ window.VIRSA.fives = [
     subtitle: "Uncut hair",
     icon: "leaf",
     meaning:
-      "Hair kept uncut and unaltered, honoured as a gift of the Creator and kept clean and covered — for men and women alike, with the dastaar (turban) covering the Kesh.",
+      "Hair kept uncut and unaltered, honoured as a gift of the Creator, and kept clean and respectfully covered. Many Sikhs cover Kesh with a dastaar (turban).",
     significance:
       "Kesh expresses acceptance of God's will and living in one's natural, God-given form. It is a mark of saintliness and respect for the Creator's design, and a visible commitment to one's faith.",
     forKids:
@@ -52,7 +52,7 @@ window.VIRSA.fives = [
     meaning:
       "A simple iron or steel bracelet (sarbloh) worn on the wrist — an unbroken circle with no beginning and no end.",
     significance:
-      "The Kara's circle reminds a Sikh of the One Eternal Creator, without beginning or end, and of one's bond with the Guru. Worn on the active hand, it is a constant, gentle reminder to do only good deeds and to act with restraint.",
+      "The Kara's circle reminds a Sikh of the One Eternal Creator, without beginning or end, and of one's bond with the Guru. Worn on the wrist, it is a constant reminder to act with restraint and integrity.",
     forKids:
       "The Kara is a steel bracelet shaped like a circle that never ends — just like God. When a Sikh sees it on their wrist, it reminds them to be kind and to do the right thing with their hands."
   },
@@ -76,7 +76,7 @@ window.VIRSA.fives = [
     subtitle: "Article of dignity & defence",
     icon: "khanda",
     meaning:
-      "A curved steel article worn by initiated Sikhs. Its name comes from 'kirpa' (mercy/grace) and 'aan' (honour) — mercy and honour.",
+      "A sheathed article of steel worn by initiated Sikhs and treated with deep respect.",
     significance:
       "The Kirpan is a sacred article of faith symbolising the duty to defend the weak, stand against injustice, and protect the dignity of all people. It is carried with the highest responsibility and restraint — it is never a weapon of aggression, but a reminder that a Sikh must be a protector and a force for justice and mercy.",
     forKids:

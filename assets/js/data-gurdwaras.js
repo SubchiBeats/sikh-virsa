@@ -150,7 +150,7 @@ window.VIRSA.gurdwaras = [
     coords: [30.6450, 76.3910],
     takht: false,
     significance:
-      "The place of martyrdom of the younger Sahibzade — Baba Zorawar Singh Ji and Baba Fateh Singh Ji — in 1705. A site of deep remembrance.",
+      "The place of martyrdom of the younger Sahibzade — Baba Zorawar Singh Ji and Baba Fateh Singh Ji — during the winter events dated 1704 or 1705 by different chronologies.",
     mapsQuery: "Gurdwara Fatehgarh Sahib Sirhind"
   },
   {
@@ -160,7 +160,7 @@ window.VIRSA.gurdwaras = [
     coords: [30.8980, 76.4200],
     takht: false,
     significance:
-      "The site of the Battle of Chamkaur (1705), where the elder Sahibzade — Baba Ajit Singh Ji and Baba Jujhar Singh Ji — fell fighting bravely.",
+      "The site of the Battle of Chamkaur, where the elder Sahibzade — Baba Ajit Singh Ji and Baba Jujhar Singh Ji — fell; chronologies date these events to 1704 or 1705.",
     mapsQuery: "Gurdwara Chamkaur Sahib"
   },
   {
@@ -170,7 +170,7 @@ window.VIRSA.gurdwaras = [
     coords: [30.4760, 74.5160],
     takht: false,
     significance:
-      "Linked to the Battle of Muktsar (1705) and the Forty Liberated Ones (Chali Mukte), and to the courage of Mai Bhago Ji. The name means 'the pool of liberation'.",
+      "Linked to the Battle of Muktsar, the Forty Liberated Ones (Chali Mukte), and the courage of Mai Bhago Ji. Chronologies date the battle to 1705 or 1706.",
     mapsQuery: "Gurdwara Darbar Sahib Sri Muktsar Sahib"
   },
   {

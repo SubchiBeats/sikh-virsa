@@ -1,113 +1,129 @@
 # Content, Sources & Accuracy Notes
 
-This file documents how Virsa's content is sourced and labelled, and — most
-importantly — **what should be reviewed by a Granthi or scholar before the app
-is published widely.** Accuracy is the project's first priority; this is the
-honest record of how that priority is upheld and where human review is needed.
+Virsa is an accuracy-first educational companion. It is not a religious
+authority, a substitute for Sri Guru Granth Sahib Ji or the Sangat, or a
+scholarly peer-reviewed history.
 
----
+Accuracy here means:
 
-## The labelling system (this is the heart of it)
+- clearly separating Gurbani from Ardas, jaikara, and modern summaries;
+- distinguishing historical events from traditional accounts;
+- marking disputed chronology instead of choosing false precision;
+- linking SGGS quotations to the exact ang for reading in context;
+- treating translations and historical interpretations as revisable; and
+- inviting corrections supported by strong sources.
 
-**Stories** (`data-stories.js`) carry a `status`:
-- `"documented"` — a well-documented historical event (e.g., the martyrdom of
-  Guru Arjan Dev Ji 1606, Guru Tegh Bahadur Ji 1675, Vaisakhi 1699, the
-  Sahibzade December 1705, the eternal Guruship 1708).
-- `"traditional"` — a **Sakhi / Janamsakhi**: a cherished account carried in the
-  Sikh tradition. These hold deep meaning and may blend history with devotional
-  teaching; they are shown as tradition, **not** as court-recorded fact.
+No responsible project can promise that every sentence is perfect. The project
+therefore makes uncertainty visible and keeps the content easy to correct.
 
-**Gurbani** (`data-gurbani.js`) carries a `type`, so nothing is misattributed:
-- `"ggs"` — a verse from **Sri Guru Granth Sahib Ji**.
-- `"ardas"` — a line of the **Ardas** (e.g., *"Nanak Naam Chardi Kala…"*) — this
-  is **not** a verse of SGGS, and is labelled as such in the app.
-- `"principle"` — a core teaching/phrase (e.g., *Kirat Karo · Naam Japo · Vand
-  Chhako*, *Chardi Kala*, *Seva*) — a summary of Sikh living, not a single verse.
-- `"jaikara"` — a Sikh call of praise (e.g., *Jo Bole So Nihaal · Sat Sri Akaal*)
-  — **not** scripture.
+## Story labels
 
-This distinction matters because conflating Ardas lines, slogans, or principles
-with SGGS verses is a common and avoidable error. The app shows the correct
-label on every quote.
+Stories in `assets/js/data-stories.js` use one of two labels:
 
----
+- `"historical"`: the core event is historically attested. This does **not**
+  mean every narrative detail is independently documented. Sikh tradition,
+  later sources, and historians can differ on details and interpretation.
+- `"traditional"`: a Sakhi, Janamsakhi account, or other cherished narrative
+  carried in Sikh tradition. These accounts hold spiritual meaning but are not
+  presented as independently established history.
 
-## An important clarification built into the app
+This two-part model is deliberately cautious. The previous label,
+`"documented"`, was removed because it implied more certainty than a short app
+entry and a single further-reading link could support.
 
-**Sri Guru Granth Sahib Ji is not a book of historical narratives.** It is
-spiritual and devotional wisdom (Bani) — guidance on how to live and how to
-remember the Divine. So when the app says a figure or story has a *"connection
-to Gurbani"*, it means **the values the story reflects, or the hymns a Guru
-composed** — never that SGGS "tells the story" of an event. This is stated
-explicitly in the Sri Guru Granth Sahib Ji entry and the About page.
+## Gurbani and other teachings
 
----
+Items in `assets/js/data-gurbani.js` carry a `type`:
 
-## On images (a deliberate decision)
+- `"ggs"`: a line from Sri Guru Granth Sahib Ji.
+- `"ardas"`: a line from Ardas, not an SGGS verse.
+- `"principle"`: a Sikh teaching or commonly used summary, not a single verse.
+- `"jaikara"`: a Sikh call of praise, not scripture.
 
-The app uses **dignified symbols and calligraphy (ੴ, the Khanda, etc.), not
-imagined portraits.** This respects the widely-held Sikh tradition that the
-Gurus should not be depicted, and it removes any risk of showing the wrong
-person — directly addressing the brief's concern. If you ever decide to add
-historical imagery (e.g., photographs of Gurdwaras, manuscripts, or battle
-sites), prefer verifiable, properly-licensed sources and avoid any depiction of
-the Gurus or the Panj Pyare.
+Only `"ggs"` items are described as Gurbani in their type label. Each SGGS item
+links to the relevant ang on SearchGurbani so the line can be read in context.
+Translations remain interpretive and should be checked against the Gurmukhi.
 
----
+During review, a popular couplet beginning "Kabeeraa, Jab Ham Paidaa Hue" was
+removed because it had been incorrectly labelled as a verse from Sri Guru
+Granth Sahib Ji.
 
-## ✅ Please have a knowledgeable reviewer check these before publishing
+## Source hierarchy
 
-The historical backbone (order of Gurus, principal dates, major events) is
-well-established. The items most worth a careful second pair of eyes:
+Different claims need different kinds of sources:
 
-1. **Gurmukhi spelling & diacritics** in `data-gurbani.js` and the `gurmukhi`
-   name fields. Diacritics matter; each verse links to SikhiToTheMax so the
-   exact original can be compared. Where exact Gurmukhi was not certain, the
-   field is left `null` and only transliteration + translation are shown.
-2. **Translations** — all translations of Gurbani are interpretive. Confirm they
-   read faithfully for your audience.
-3. **Dates** — given as commonly-cited Gregorian years. A few vary slightly
-   across scholarly sources; confirm against your preferred references.
-4. **Nitnem set & maryada** — the banis included reflect the most widely-recited
-   set; the app states that traditions vary. Confirm it matches the maryada you
-   wish to present.
-5. **The audio recordings** (see below).
+1. **Gurbani text and attribution:** read the relevant ang and cross-check using
+   SearchGurbani, SikhiToTheMax, or SriGranth.
+2. **Panthic practice and maryada:** consult the Sikh Rehat Maryada and the
+   guidance of a knowledgeable Granthi, Gurdwara, or chosen tradition. Practices
+   and recensions can differ.
+3. **Historical claims:** compare reputable histories and, where possible,
+   primary or near-contemporary sources. A community-edited reference is a
+   useful starting point, not final proof.
+4. **Traditional accounts:** preserve the tradition label and avoid presenting
+   devotional detail as independently documented fact.
 
----
+The current figure and story links are further-reading starting points. They do
+not, by themselves, verify every sentence in an entry.
 
-## Audio sources
+## Dates and chronology
 
-- **Primary (always available):** every bani links to **SikhNet Play**
-  (`play.sikhnet.com`), a large free library of mainstream recordings that can
-  be streamed and downloaded. This is the recommended listening experience.
-- **In-app convenience player:** for **Japji Sahib** and **Kirtan Sohila**, a
-  direct recording from the **Internet Archive** plays inside the app. Both URLs
-  were verified to load. The reciter (Master Darshan Singh, via archive.org) is
-  **credited on screen**. The *words* are standard Gurbani; if you would prefer a
-  different reciter, simply replace the `inAppAudio` URL in `data-paaths.js` with
-  any direct audio file. If an in-app file ever fails to load, the player
-  automatically points the listener to SikhNet.
-- The other banis use the SikhNet link only (no in-app file is hard-coded for
-  them yet — you can add `inAppAudio` URLs the same way if you wish).
+Dates are commonly cited Gregorian years. Converting older Bikrami dates and
+reconciling historical sources creates real disagreement. In particular:
 
----
+- the evacuation of Anandpur, Chamkaur, the martyrdom of the younger Sahibzade,
+  and Mata Gujri Ji are dated 1704 or 1705 in different chronologies;
+- the Battle of Muktsar is dated 1705 or 1706 in different chronologies; and
+- festival observance dates can vary by calendar and community.
 
-## Trusted resources linked throughout
+Virsa marks these differences rather than choosing one date without warning.
 
-- **SikhiToTheMax** — https://www.sikhitothemax.org/ (Gurbani search & text)
-- **SearchGurbani** — https://www.searchgurbani.com/
-- **SriGranth** — https://www.srigranth.org/
-- **SikhNet** — https://www.sikhnet.com/ (audio, articles)
-- **SikhiWiki** — https://www.sikhiwiki.org/ (figure & event references)
+## Nitnem and maryada
 
----
+The Nitnem section presents seven commonly recited banis grouped by time of day.
+The precise daily set and the form of some banis can differ by maryada and
+tradition. The app is a practice companion, not an authority on maryada.
 
-## Coverage in this first release
+A practice streak counts when the user checks at least one bani they actually
+recited. The app does not mark every listed bani complete on the user's behalf.
 
-- **19** figures (10 Gurus + Sri Guru Granth Sahib Ji + 8 key figures)
-- **14** stories (Sakhis & documented events), each labelled
-- **15** Gurbani verses/teachings with reflections, each labelled by source
-- **7** Nitnem banis with audio and a streak tracker
+## Images
 
-This is intentionally an *extensible foundation*, not a finished encyclopedia —
-the data files are built so content can keep growing for years.
+Virsa uses symbols and calligraphy rather than imagined portraits. No verified
+contemporary likeness exists for most Gurus, and Sikh views on depiction differ.
+The app avoids presenting an artistic interpretation as a historical likeness.
+
+## Audio, network use, and privacy
+
+- Direct in-app audio for Japji Sahib and Kirtan Sohila is served by the
+  Internet Archive and credited in the interface.
+- Other listening links open SikhNet Play.
+- The optional map loads Leaflet from unpkg and tiles from OpenStreetMap.
+- Google Fonts are requested when online.
+- Nitnem progress and settings are stored in the browser's local storage and are
+  not sent by Virsa to a project backend.
+
+The core content is static and has no project backend, but optional fonts, maps,
+audio, and external references do use the network. Virsa does not claim to be a
+fully offline app.
+
+## Review priorities
+
+The most valuable next review is by a knowledgeable Granthi, Sikh historian, or
+Punjabi/Gurmukhi reader who can check:
+
+1. exact Gurmukhi spelling and transliteration;
+2. interpretive English translations;
+3. maryada-sensitive wording;
+4. historical claims against stronger sources; and
+5. date conventions used by the intended audience.
+
+See `CONTRIBUTING.md` for the correction standard.
+
+## Coverage in this release
+
+- 19 figures: the Ten Gurus, Sri Guru Granth Sahib Ji, and 8 key figures
+- 14 stories, each labelled historical or traditional
+- 14 Gurbani lines and clearly labelled Sikh teachings
+- 7 commonly recited Nitnem banis
+- festivals, the Five Ks, a glossary, and historical Gurdwaras

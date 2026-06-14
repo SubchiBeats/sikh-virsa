@@ -1,14 +1,15 @@
 /* ============================================================================
    VIRSA — Sikh Heritage & Stories
-   data-stories.js  —  Sakhis (traditional accounts) and documented events.
+   data-stories.js  —  Sakhis (traditional accounts) and historical events.
 
    THE 'status' FIELD IS IMPORTANT
    --------------------------------
-   "documented"  = a well-documented historical event.
+   "historical"  = the core event is historically attested. Individual details
+                   can still come from Sikh tradition or differ across sources.
    "traditional" = a Sakhi / Janamsakhi: a cherished account passed down in the
                    Sikh tradition. These carry deep spiritual meaning and may
                    blend history with devotional teaching; they are presented
-                   here as tradition, not as court-recorded fact.
+                   here as tradition, not as independently established history.
 
    This labelling is deliberate, so that nothing is mistaken for something it is
    not. The 'lesson' field captures the teaching the story carries.
@@ -131,13 +132,13 @@ window.VIRSA.stories = [
     id: "martyrdom-guru-arjan",
     figureId: "guru-arjan",
     title: "The Martyrdom of Guru Arjan Dev Ji",
-    status: "documented",
+    status: "historical",
     era: "1606",
     summary:
-      "The first Sikh martyr gave his life rather than alter his faith, accepting his fate in serene acceptance of the Divine Will.",
+      "The first Sikh martyr remained steadfast under Mughal persecution, remembered in Sikh tradition for serene acceptance of the Divine Will.",
     body: [
-      "Having compiled the Adi Granth and built Harmandir Sahib, Guru Arjan Dev Ji's growing influence drew the suspicion of the Mughal authorities under Emperor Jahangir.",
-      "He was subjected to severe torture and, in 1606, gave his life — becoming the first of the Sikh martyrs.",
+      "Having compiled the Adi Granth and completed Harmandir Sahib, Guru Arjan Dev Ji's growing influence drew the suspicion of the Mughal authorities under Emperor Jahangir.",
+      "His death under Mughal authority in 1606 is historically attested. Sikh tradition preserves accounts of severe torture and remembers him as the first Sikh martyr.",
       "Tradition remembers his calm acceptance with the words of submission to the Divine Will: 'Tera Kiya Meetha Lage' — 'Sweet is whatever You do.' His martyrdom transformed the community's resolve to stand against injustice."
     ],
     lesson:
@@ -145,7 +146,7 @@ window.VIRSA.stories = [
     gurbani:
       "His spirit is captured in the much-loved line 'Tera Kiya Meetha Lage' — accepting the Divine Will with sweetness — from his own bani.",
     forKids:
-      "Guru Arjan Dev Ji was treated very cruelly because of his faith, but he never grew angry or gave up his beliefs. He stayed calm and accepted God's will. He was the first Sikh to give his life for his faith.",
+      "Guru Arjan Dev Ji was treated cruelly under Mughal authority, but Sikh tradition remembers that he stayed calm and steadfast. He is honoured as the first Sikh martyr.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Arjan_Dev",
     tags: ["martyr", "faith", "courage", "hukam"]
   },
@@ -178,16 +179,16 @@ window.VIRSA.stories = [
     status: "traditional",
     era: "1664, Delhi",
     summary:
-      "The youngest Guru tended to people struck by an epidemic in Delhi, giving his own life in their service.",
+      "Sikh tradition remembers the youngest Guru serving people during an epidemic in Delhi before dying from illness.",
     body: [
       "When an epidemic swept through Delhi, Guru Har Krishan Ji — still a child — cared for the sick and suffering without concern for himself.",
-      "It is remembered that he gave comfort, water, and healing to many, regardless of who they were.",
-      "He contracted the illness and passed away in 1664. The place where he stayed is today Gurdwara Bangla Sahib, whose sarovar water is revered as a source of comfort and healing."
+      "It is remembered that he gave comfort, water, and care to many, regardless of who they were.",
+      "He contracted illness and passed away in 1664. The place where he stayed is today Gurdwara Bangla Sahib, whose sarovar is a place of devotion and comfort."
     ],
     lesson:
       "Greatness is not about age or power — it is about service. To give of yourself for others, even at great cost, is the truest nobility.",
     gurbani:
-      "Sikhs invoke him in Ardas as the one whose very remembrance removes suffering — 'Sri Harkrishan dhyaaeeai, jis dithe sabh dukh jaae.'",
+      "Ardas asks Sikhs to remember him and says that seeing him made suffering depart — 'Sri Harkrishan dhyaaeeai, jis dithe sabh dukh jaae.'",
     forKids:
       "When many people in Delhi got very sick, the young Guru Har Krishan Ji helped take care of them, even though he was just a child and it was dangerous. He gave everything to help others.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Har_Krishan",
@@ -197,21 +198,21 @@ window.VIRSA.stories = [
     id: "teghbahadur-kashmiri-pandits",
     figureId: "guru-teghbahadur",
     title: "The Shield of India — Standing for Another's Faith",
-    status: "documented",
+    status: "historical",
     era: "1675",
     summary:
-      "Guru Tegh Bahadur Ji gave his life to defend the right of Kashmiri Pandits — people of another religion — to worship freely.",
+      "Guru Tegh Bahadur Ji's 1675 execution is historically attested; Sikh tradition remembers his stand for the religious freedom of Kashmiri Pandits.",
     body: [
-      "A group of Kashmiri Pandits, facing forced conversion under Emperor Aurangzeb, came to Guru Tegh Bahadur Ji for help.",
-      "The Guru chose to stand for their freedom to follow their own faith — not his own — challenging the injustice of forced conversion.",
-      "In 1675 he was martyred in Delhi, at the site now known as Gurdwara Sis Ganj Sahib. For giving his life so that others could worship in their own way, he is honoured as 'Hind di Chadar' — the Shield of India."
+      "Guru Tegh Bahadur Ji was executed under Emperor Aurangzeb's authority in Delhi in 1675, at the site now marked by Gurdwara Sis Ganj Sahib.",
+      "Sikh tradition records that Kashmiri Pandits facing forced conversion sought his help, and that the Guru chose to defend their freedom to follow a faith other than his own.",
+      "For this stand for freedom of conscience, Sikhs honour him as 'Hind di Chadar' — the Shield of India."
     ],
     lesson:
       "Defending another person's freedom of conscience — even when their beliefs differ from your own — is among the noblest of acts. Justice is for everyone.",
     gurbani:
       "His own saloks, added to the scripture by Guru Gobind Singh Ji, speak of fearlessness and detachment in the face of death.",
     forKids:
-      "Some people of a different religion were being forced to change their beliefs. Guru Tegh Bahadur Ji bravely stood up for their right to pray their own way — and gave his life to protect their freedom. That is real courage and fairness.",
+      "Sikh tradition remembers Guru Tegh Bahadur Ji standing up for people of another religion who faced forced conversion. He gave his life rather than abandon freedom of conscience.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Tegh_Bahadur",
     tags: ["religious-freedom", "martyr", "justice", "courage"]
   },
@@ -219,7 +220,7 @@ window.VIRSA.stories = [
     id: "vaisakhi-1699",
     figureId: "guru-gobindsingh",
     title: "Vaisakhi 1699 — The Birth of the Khalsa",
-    status: "documented",
+    status: "historical",
     era: "1699, Anandpur Sahib",
     summary:
       "Guru Gobind Singh Ji called for those willing to give everything for their faith, and from their courage the Khalsa was born.",
@@ -241,12 +242,12 @@ window.VIRSA.stories = [
     id: "chamkaur-sirhind",
     figureId: "char-sahibzade",
     title: "Chamkaur and Sirhind — The Sacrifice of the Sahibzade",
-    status: "documented",
-    era: "December 1705",
+    status: "historical",
+    era: "December 1704/1705 · chronology varies by source",
     summary:
       "All four sons of Guru Gobind Singh Ji gave their lives rather than abandon their faith — two in battle, two as young children who would not bow to fear.",
     body: [
-      "In the bitter December of 1705, the family of Guru Gobind Singh Ji was scattered after leaving Anandpur. At Chamkaur, the elder Sahibzade — Baba Ajit Singh Ji and Baba Jujhar Singh Ji — fell fighting bravely against overwhelming numbers.",
+      "In a bitter December, the family of Guru Gobind Singh Ji was scattered after leaving Anandpur. Sources differ on whether these events should be dated 1704 or 1705. At Chamkaur, the elder Sahibzade — Baba Ajit Singh Ji and Baba Jujhar Singh Ji — fell fighting bravely against overwhelming numbers.",
       "The younger Sahibzade — Baba Zorawar Singh Ji and Baba Fateh Singh Ji, just children — were captured with their grandmother Mata Gujri Ji and taken to Sirhind.",
       "Offered comfort and life if they would abandon their faith, the young brothers refused, and were martyred. Their courage, and that of Mata Gujri Ji, is honoured every December."
     ],
@@ -256,7 +257,7 @@ window.VIRSA.stories = [
       "Their steadfastness embodies the Gurbani teaching that to live and die in truth is greater than to live in fear.",
     forKids:
       "In a very cold winter, Guru Gobind Singh Ji's four sons were incredibly brave. Two fought to protect others, and the two youngest — only about seven and nine — refused to give up their faith no matter what. Sikhs remember their courage every year.",
-    verifyUrl: "https://www.sikhiwiki.org/index.php/Sahibzadas",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Gobind_Singh",
     tags: ["martyrs", "courage", "faith", "sahibzade"]
   },
   {
@@ -286,13 +287,13 @@ window.VIRSA.stories = [
     figureId: "mai-bhago",
     title: "Mai Bhago and the Forty Liberated Ones",
     status: "traditional",
-    era: "1705, Muktsar",
+    era: "1705/1706, Muktsar · chronology varies by source",
     summary:
       "A woman warrior rallied those who had turned back, leading them to return and stand with the Guru at Muktsar.",
     body: [
       "During the hardships of the siege of Anandpur, a group of Sikhs left and returned to their villages.",
       "Mai Bhago Ji refused to accept their leaving. With courage and conviction, she gathered them and led them back to fight alongside the Guru.",
-      "At the Battle of Muktsar in 1705 they fought valiantly. Those who fell are honoured as the 'Chali Mukte' — the Forty Liberated Ones — and the place is named Muktsar (the pool of liberation)."
+      "At the Battle of Muktsar — dated 1705 or 1706 in different chronologies — they fought valiantly. Those who fell are honoured as the 'Chali Mukte' — the Forty Liberated Ones — and the place is named Muktsar (the pool of liberation)."
     ],
     lesson:
       "It is never too late to return to what is right. And courage and leadership belong to women as fully as to anyone.",
@@ -307,7 +308,7 @@ window.VIRSA.stories = [
     id: "guru-granth-eternal",
     figureId: "guru-granth-sahib",
     title: "The Eternal Guru",
-    status: "documented",
+    status: "historical",
     era: "1708, Nanded",
     summary:
       "Before passing, Guru Gobind Singh Ji ended the line of human Gurus and declared Sri Guru Granth Sahib Ji the eternal Guru of the Sikhs.",

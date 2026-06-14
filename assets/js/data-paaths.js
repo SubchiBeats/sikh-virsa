@@ -71,7 +71,7 @@ window.VIRSA.paaths = [
     whenToRead: "Recited in the morning as part of the daily Nitnem.",
     inAppAudio: null,
     inAppReciter: null,
-    listenUrl: "https://play.sikhnet.com/playlist/nitnem-119",
+    listenUrl: "https://play.sikhnet.com/search?q=Tav%20Prasad%20Savaiye",
     tags: ["morning"]
   },
   {
@@ -105,7 +105,7 @@ window.VIRSA.paaths = [
       "Recited in the morning Nitnem and at the conclusion of ceremonies and happy occasions.",
     inAppAudio: null,
     inAppReciter: null,
-    listenUrl: "https://play.sikhnet.com/playlist/nitnem-119",
+    listenUrl: "https://play.sikhnet.com/search?q=Anand%20Sahib",
     tags: ["morning", "celebration", "bliss"]
   },
   {
@@ -145,7 +145,7 @@ window.VIRSA.paaths = [
 /* A general, always-available resource for the full text, translations, and
    many more recordings of every bani. */
 window.VIRSA.paathResources = {
-  sikhnetNitnem: "https://play.sikhnet.com/playlist/nitnem-119",
+  sikhnetNitnem: "https://play.sikhnet.com/search?q=Nitnem",
   readText: "https://www.searchgurbani.com/",
   sikhitothemax: "https://www.sikhitothemax.org/"
 };
