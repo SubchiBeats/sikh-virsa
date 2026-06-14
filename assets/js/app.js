@@ -122,6 +122,20 @@
 
   /* ------------------------------ kids mode ------------------------------ */
   function kidsOn() { return store.get("virsa.kids", false) === true; }
+  function setKids(on) {
+    store.set("virsa.kids", on === true);
+    var kb = byId("kidsToggle");
+    if (kb) kb.setAttribute("aria-pressed", on === true);
+    router(); // re-render the current view in the new mode
+  }
+  function kidsBannerHTML() {
+    return (
+      '<div class="kids-banner" role="status">' +
+        "<span>🧒 <strong>Kids mode is on</strong> — stories and lives are shown in simpler language.</span>" +
+        '<button class="btn btn-sm" id="kidsBannerOff" type="button">Turn off</button>' +
+      "</div>"
+    );
+  }
 
   /* ------------------------- shared render pieces ------------------------ */
   function gurbaniCard(g, opts) {
@@ -161,7 +175,7 @@
         '<span class="tile-title">' + esc(f.title) + "</span>" +
         "<h3>" + esc(f.name) + "</h3>" +
         '<span class="gurmukhi" lang="pa">' + esc(f.gurmukhi || "") + "</span>" +
-        "<p>" + esc(f.relevance) + "</p>" +
+        "<p>" + esc(kidsOn() && f.forKids ? f.forKids : f.relevance) + "</p>" +
       "</a>"
     );
   }
@@ -176,7 +190,7 @@
         badge +
         "<h3>" + esc(s.title) + "</h3>" +
         '<span class="tile-title">' + esc(s.era || "") + (fig ? " · " + esc(fig.name) : "") + "</span>" +
-        "<p>" + esc(s.summary) + "</p>" +
+        "<p>" + esc(kidsOn() && s.forKids ? s.forKids : s.summary) + "</p>" +
       "</a>"
     );
   }
@@ -302,8 +316,9 @@
       body = '<div class="prose">' + (f.summary || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>";
     }
 
+    var contribHead = f.type === "scripture" ? "What it holds" : "A few of their many contributions";
     var contributions = !kids && f.contributions ?
-      '<h3 class="related-head">Why ' + esc(shortName(f)) + " matters</h3><ul class=\"list-clean\">" +
+      '<h3 class="related-head">' + contribHead + "</h3><ul class=\"list-clean\">" +
         f.contributions.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>" : "";
 
     var gurbaniBlock = !kids && f.gurbani ?
@@ -552,9 +567,6 @@
             "<li><strong>Translations are interpretive.</strong> Gurbani cannot be translated perfectly; our translations aim to convey meaning, and we point you to the original Gurmukhi every time.</li>" +
           "</ul></div>" +
 
-        '<div class="about-block"><h2>On images</h2>' +
-          "<p>No verified contemporary likeness exists for most Gurus, and Sikh views on depiction differ. Virsa therefore uses symbols and calligraphy rather than presenting imagined portraits as historical likenesses.</p></div>" +
-
         '<div class="about-block"><h2>Further-reading resources</h2>' +
           '<div class="source-links">' +
             '<a class="btn btn-sm" href="https://www.sikhitothemax.org/" target="_blank" rel="noopener">SikhiToTheMax ↗</a>' +
@@ -660,7 +672,7 @@
             '<div class="festival-when"><span class="badge badge-time">' + esc(f.kind) + "</span> · " + esc(f.whenText) + "</div></div>" +
           '<p class="festival-section"><b>Remembers</b> ' + esc(f.commemorates) + "</p>" +
           '<p class="festival-section"><b>How it is observed</b> ' + esc(f.observance) + "</p>" +
-          '<p class="festival-section meaning"><b>Why it matters</b> ' + esc(f.significance) + "</p>" +
+          '<p class="festival-section meaning"><b>Significance</b> ' + esc(f.significance) + "</p>" +
         "</article>"
       );
     }).join("");
@@ -680,7 +692,7 @@
     var cards = (D.fives || []).map(function (k) {
       var body = kids
         ? '<div class="callout kids" style="margin-top:10px"><span class="label">Simple version</span><p>' + esc(k.forKids) + "</p></div>"
-        : "<p>" + esc(k.meaning) + '</p><div class="callout lesson" style="margin:12px 0 0"><span class="label">Why it matters</span><p>' + esc(k.significance) + "</p></div>";
+        : "<p>" + esc(k.meaning) + '</p><div class="callout lesson" style="margin:12px 0 0"><span class="label">What it represents</span><p>' + esc(k.significance) + "</p></div>";
       return (
         '<article class="card kakaar-card">' +
           '<div class="kakaar-head"><span class="detail-emblem">' + icon(k.icon) + "</span>" +
@@ -809,6 +821,14 @@
     if (parts[0] === "figure" && parts[1]) { viewFigureDetail(decodeURIComponent(parts[1])); }
     else if (parts[0] === "story" && parts[1]) { viewStoryDetail(decodeURIComponent(parts[1])); }
     else { (routes[parts[0]] || viewHome)(); }
+    if (kidsOn()) {
+      var sec = app.firstElementChild;
+      if (sec) {
+        sec.insertAdjacentHTML("afterbegin", kidsBannerHTML());
+        var off = byId("kidsBannerOff");
+        if (off) off.addEventListener("click", function () { setKids(false); });
+      }
+    }
     setActiveTab(parts[0] || "home");
     window.scrollTo(0, 0);
     byId("main").focus({ preventScroll: true });
@@ -846,9 +866,7 @@
     function syncKids() { kidsBtn.setAttribute("aria-pressed", kidsOn()); }
     syncKids();
     kidsBtn.addEventListener("click", function () {
-      store.set("virsa.kids", !kidsOn());
-      syncKids();
-      router(); // re-render current view with the new mode
+      setKids(!kidsOn());
     });
   }
 

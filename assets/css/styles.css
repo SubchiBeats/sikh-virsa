@@ -434,3 +434,13 @@ html[data-theme="dark"] .callout.gurbani-link { border-color: #9db4e6; }
   .tab svg { width: 21px; height: 21px; }
   .tabbar { padding-left: 0; padding-right: 0; }
 }
+
+/* Kids-mode banner (shown on every view while kids mode is on) */
+.kids-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  margin: 0 0 18px; padding: 11px 16px; border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  font-size: .9rem;
+}
+.kids-banner strong { color: var(--accent-ink); }

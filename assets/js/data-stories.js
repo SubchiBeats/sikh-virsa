@@ -325,5 +325,269 @@ window.VIRSA.stories = [
       "Before he passed away, Guru Gobind Singh Ji said the holy book — Sri Guru Granth Sahib Ji — would be the forever Guru. So Sikhs treat it as a living, wise teacher, not just an ordinary book.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Granth_Sahib",
     tags: ["eternal-guru", "scripture", "guruship"]
+  },
+  {
+    id: "bhai-lehna-guru-angad",
+    figureId: "guru-angad",
+    title: "Bhai Lehna Becomes Guru Angad",
+    status: "traditional",
+    era: "Time of Guru Nanak Dev Ji",
+    summary:
+      "Devotion, humility, and selfless service — not birth — led Guru Nanak Dev Ji to choose Bhai Lehna as his successor.",
+    body: [
+      "Bhai Lehna came to Guru Nanak Dev Ji and was so moved by Gurbani that he gave himself completely to the Guru's service, with deep humility and obedience.",
+      "Traditional accounts tell of how his devotion was tested in ways that the Guru's own sons would not accept — and that Bhai Lehna served without hesitation or pride.",
+      "Guru Nanak Dev Ji renamed him 'Angad' — 'a part of my own body' — and appointed him the Second Guru, showing that the Guruship passes by merit and devotion, never by birthright."
+    ],
+    lesson:
+      "Greatness is earned through humility and selfless service, not inherited through family or status.",
+    gurbani:
+      "Bhai Lehna's transformation began on hearing Gurbani — a reminder that the Word itself awakens devotion. His own saloks are part of Sri Guru Granth Sahib Ji.",
+    forKids:
+      "A man named Bhai Lehna loved Guru Nanak so much that he happily served him in every way, never thinking any job was beneath him. Because of his humble heart, Guru Nanak chose him to be the next Guru — Guru Angad!",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Angad_Dev",
+    tags: ["humility", "seva", "succession"]
+  },
+  {
+    id: "guru-nanak-hardwar",
+    figureId: "guru-nanak",
+    title: "Watering the Fields at Hardwar",
+    status: "traditional",
+    era: "Travels of Guru Nanak Dev Ji",
+    summary:
+      "At a place of pilgrimage, Guru Nanak Dev Ji gently exposed the emptiness of ritual performed without understanding.",
+    body: [
+      "At Hardwar, on the banks of the Ganga, Guru Nanak Dev Ji saw pilgrims throwing water toward the rising sun in the east, believing it would reach their ancestors.",
+      "He began throwing water toward the west. When the pilgrims asked why, he said he was watering his fields in Punjab. They laughed — his fields were hundreds of miles away.",
+      "He replied that if their water could reach the sun and their ancestors in another world, surely his could reach his fields, which were far nearer. Their ritual, he showed, was being done without thought."
+    ],
+    lesson:
+      "Ritual without understanding is empty. True devotion engages the heart and mind, not just the hands.",
+    gurbani:
+      "This reflects the Gurus' constant teaching that outward ceremony is worthless without sincere love and remembrance of the One.",
+    forKids:
+      "People were throwing water toward the sun for their ancestors far away. So Guru Nanak threw water the other way — toward his fields! He showed them that doing something without really understanding it doesn't make much sense.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Nanak_Dev",
+    tags: ["ritual", "understanding", "travels"]
+  },
+  {
+    id: "sajjan-thug",
+    figureId: "guru-nanak",
+    title: "Sajjan the Robber",
+    status: "traditional",
+    era: "Travels of Guru Nanak Dev Ji",
+    summary:
+      "A man who robbed the travellers he pretended to shelter was transformed by a single shabad into a life of honesty.",
+    body: [
+      "Sajjan ran a rest-house that welcomed both Hindus and Muslims, appearing pious and kind — but he robbed, and even harmed, the travellers who trusted him.",
+      "Guru Nanak Dev Ji and Bhai Mardana stayed the night. Instead of sleeping, the Guru sang a shabad about the difference between an outward show of goodness and a truthful heart.",
+      "The words pierced Sajjan's conscience. He fell at the Guru's feet, confessed, returned what he had taken, and turned to an honest, devoted life."
+    ],
+    lesson:
+      "No one is beyond redemption. Truth, spoken with love, can awaken even a hardened heart.",
+    gurbani:
+      "The shabad's theme — that a beautiful exterior means nothing without inner truth — runs throughout Gurbani.",
+    forKids:
+      "Sajjan pretended to be kind but actually robbed his guests. When Guru Nanak sang to him about being good on the inside, Sajjan felt sorry, said sorry, gave everything back, and became honest and good.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Nanak_Dev",
+    tags: ["redemption", "honesty", "transformation"]
+  },
+  {
+    id: "duni-chand-needle",
+    figureId: "guru-nanak",
+    title: "Duni Chand and the Needle",
+    status: "traditional",
+    era: "Travels of Guru Nanak Dev Ji",
+    summary:
+      "A wealthy man learned that the only thing we carry beyond this life is what we give away.",
+    body: [
+      "Duni Chand, a rich man, flew a flag on his house for every large sum he had earned, proud of his growing fortune.",
+      "Guru Nanak Dev Ji handed him a small needle and asked him to keep it safe and return it in the next world. Duni Chand laughed — how could a needle travel with him after death?",
+      "The Guru replied: if even a small needle cannot follow you, how will your wealth and mansions? Duni Chand understood, and began to share his riches with those in need."
+    ],
+    lesson:
+      "We carry nothing material beyond this life — only our deeds. Wealth finds its meaning in being shared (Vand Chhako).",
+    gurbani:
+      "This story embodies Vand Chhako, the pillar of sharing, and the Gurbani teaching that attachment to wealth is fleeting.",
+    forKids:
+      "A rich man was very proud of his money. Guru Nanak gave him a needle and asked him to bring it back after he died. The man said that was impossible — so the Guru asked, then how will your money come with you? The man learned to share with others.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Nanak_Dev",
+    tags: ["sharing", "wealth", "vand-chhako"]
+  },
+  {
+    id: "amardas-seva",
+    figureId: "guru-amardas",
+    title: "A Lifetime of Seva",
+    status: "traditional",
+    era: "Before the Guruship of Guru Amar Das Ji",
+    summary:
+      "In his old age, the future Third Guru served Guru Angad Dev Ji with such devotion that nothing could interrupt it.",
+    body: [
+      "Before he became Guru, Amar Das Ji — already advanced in years — served Guru Angad Dev Ji with complete devotion, rising before dawn each day to bring water from the river for the Guru's bath.",
+      "Tradition tells that one dark, stormy night he stumbled on the way but did not spill the water, refusing to let anything interrupt his seva.",
+      "His humility and unwavering devotion, despite his age, led Guru Angad Dev Ji to choose him as the Third Guru."
+    ],
+    lesson:
+      "Devotion and selfless service are not limited by age. Humility is the path to grace.",
+    gurbani:
+      "Guru Amar Das Ji, who composed the Anand Sahib, lived the truth that seva and humility open the heart to the Divine.",
+    forKids:
+      "Even when he was quite old, Amar Das Ji happily fetched water every morning for his Guru, no matter the weather. His loving service was so strong that he was chosen to become the next Guru.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Amar_Das",
+    tags: ["seva", "humility", "devotion"]
+  },
+  {
+    id: "guru-harrai-compassion",
+    figureId: "guru-harrai",
+    title: "The Gentle Guru and the Garden of Healing",
+    status: "traditional",
+    era: "Time of Guru Har Rai Ji",
+    summary:
+      "Guru Har Rai Ji is remembered for tenderness toward all living things and for healing the sick through a garden of herbs.",
+    body: [
+      "Guru Har Rai Ji is cherished for his gentleness. A well-loved tradition tells that, having accidentally brushed against and harmed a flower, he was so moved that he resolved to walk with even greater care for the life around him.",
+      "He maintained a renowned garden of medicinal herbs and a dispensary, offering healing and care to all who came, regardless of who they were.",
+      "Though he kept a trained force for defence, he turned the community toward peace, healing, and quiet devotion."
+    ],
+    lesson:
+      "Gentleness and care for all of creation are themselves a form of great strength.",
+    gurbani:
+      "His life reflected the Gurbani vision that the same Divine Light shines in every living being, deserving of care and compassion.",
+    forKids:
+      "Guru Har Rai Ji was very gentle and kind, even to plants and animals. He grew a special garden of herbs to make medicine for sick people. He showed that being caring and gentle is a wonderful kind of strength.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Har_Rai",
+    tags: ["compassion", "healing", "nature"]
+  },
+  {
+    id: "founding-amritsar",
+    figureId: "guru-ramdas",
+    title: "The Founding of Amritsar",
+    status: "historical",
+    era: "Time of Guru Ram Das Ji (16th century)",
+    summary:
+      "Guru Ram Das Ji founded the town that became Amritsar and began the sacred pool at its heart.",
+    body: [
+      "Guru Ram Das Ji founded the settlement first known as Ramdaspur, which grew into the city of Amritsar.",
+      "He began the excavation of the sacred pool (sarovar) that gives the city its name — Amrit-sar, 'the pool of nectar'. It became the spiritual heart of the Sikh world.",
+      "The work was continued by Guru Arjan Dev Ji, who completed Harmandir Sahib at its centre and installed the Adi Granth there."
+    ],
+    lesson:
+      "To build a place where all people are welcome as equals is a lasting act of service.",
+    gurbani:
+      "Guru Ram Das Ji composed the Laavan, the four hymns recited at the Anand Karaj (Sikh marriage), now part of Sri Guru Granth Sahib Ji.",
+    forKids:
+      "Guru Ram Das Ji started the city of Amritsar and began digging the beautiful pool of water where the Golden Temple stands today. It became a special home for Sikhs everywhere.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Ram_Das",
+    tags: ["amritsar", "sarovar", "community"]
+  },
+  {
+    id: "adi-granth-1604",
+    figureId: "guru-arjan",
+    title: "The Compilation of the Adi Granth",
+    status: "historical",
+    era: "1604",
+    summary:
+      "Guru Arjan Dev Ji gathered the hymns of the Gurus and saints into one volume, the foundation of Sri Guru Granth Sahib Ji.",
+    body: [
+      "In 1604, Guru Arjan Dev Ji compiled the Adi Granth, bringing together the hymns of the Gurus before him alongside the bani of Hindu and Muslim Bhagats — among them Bhagat Kabir, Bhagat Ravidas, Bhagat Namdev, and Sheikh Farid.",
+      "Bhai Gurdas served as the scribe. The volume was installed at Harmandir Sahib, with Baba Buddha Ji honoured as its first custodian.",
+      "This compilation became the foundation of Sri Guru Granth Sahib Ji, later completed by Guru Gobind Singh Ji."
+    ],
+    lesson:
+      "One truth is shared across communities. Preserving and honouring divine wisdom is a gift to every generation that follows.",
+    gurbani:
+      "The Adi Granth's inclusion of saints from different backgrounds reflects the Sikh vision of one Light in all — Gurbani belongs to all humanity.",
+    forKids:
+      "Guru Arjan Dev Ji collected all the holy hymns — even ones written by people of other religions — into one big book, and placed it in the Golden Temple. This book grew into Sri Guru Granth Sahib Ji.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Arjan_Dev",
+    tags: ["adi-granth", "scripture", "bhagats"]
+  },
+  {
+    id: "akal-takht-miri-piri",
+    figureId: "guru-hargobind",
+    title: "Miri-Piri and the Akal Takht",
+    status: "historical",
+    era: "1606 onwards",
+    summary:
+      "Guru Hargobind Ji took up two swords and built the Akal Takht, uniting spiritual life with the duty to uphold justice.",
+    body: [
+      "After the martyrdom of his father, Guru Arjan Dev Ji, the young Guru Hargobind Ji wore two swords representing Miri (worldly responsibility) and Piri (spiritual authority).",
+      "He oversaw the building of the Akal Takht — the 'Throne of the Timeless' — at Amritsar, facing Harmandir Sahib, as a seat of temporal authority for the community.",
+      "In this way he taught that a life of faith must also include the courage to stand against tyranny and injustice."
+    ],
+    lesson:
+      "Spirituality and the defence of justice belong together; inner devotion and outward responsibility are two halves of one whole.",
+    gurbani:
+      "Miri-Piri lives out the Gurbani principle that the Divine is found both in inner remembrance and in just, courageous action in the world.",
+    forKids:
+      "After his father was treated cruelly, Guru Hargobind Ji wore two swords — one for being good and praying, and one for bravely protecting others. He built the Akal Takht, a special place that still stands in Amritsar.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Hargobind",
+    tags: ["miri-piri", "akal-takht", "justice"]
+  },
+  {
+    id: "zafarnama",
+    figureId: "guru-gobindsingh",
+    title: "The Zafarnama — The Epistle of Victory",
+    status: "historical",
+    era: "c. 1705",
+    summary:
+      "Guru Gobind Singh Ji answered Emperor Aurangzeb not with hatred but with a fearless letter on truth, justice, and broken oaths.",
+    body: [
+      "After the siege of Anandpur and the loss of his sons, Guru Gobind Singh Ji wrote the Zafarnama — the 'Epistle of Victory' — a letter in Persian verse addressed to Emperor Aurangzeb.",
+      "In it he rebuked the emperor for the broken oaths of his commanders, affirmed the justice of his own cause, and declared that when every peaceful means has failed, it is right to draw the sword in defence of righteousness.",
+      "The Zafarnama is preserved as part of Sikh literary heritage — a moral victory written in the face of great loss."
+    ],
+    lesson:
+      "True victory is moral, not merely military. Truth can be spoken fearlessly even to the most powerful.",
+    gurbani:
+      "The Zafarnama's spirit echoes the Gurus' teaching that righteousness and fearlessness, not cruelty, are the marks of a just cause.",
+    forKids:
+      "After a very hard time, Guru Gobind Singh Ji wrote a brave letter to the emperor. He did not write with hate — he wrote about truth, fairness, and keeping your promises. It is remembered as a 'letter of victory'.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Guru_Gobind_Singh",
+    tags: ["zafarnama", "justice", "courage"]
+  },
+  {
+    id: "baba-deep-singh-1757",
+    figureId: "baba-deep-singh",
+    title: "The Defence of Harmandir Sahib",
+    status: "traditional",
+    era: "1757",
+    summary:
+      "A revered scholar-warrior gave his life defending the honour of Sri Harmandir Sahib.",
+    body: [
+      "Baba Deep Singh Ji, esteemed both as a scholar of Gurbani and as a warrior, learned that Sri Harmandir Sahib had been desecrated.",
+      "Though advanced in years, he gathered a body of Sikhs and set out to defend it, and was mortally wounded in the fighting near Amritsar in 1757. He is honoured as one of the great Shaheeds (martyrs).",
+      "Cherished Sikh tradition tells that, gravely wounded, he pressed on with unbreakable resolve to reach the sacred precincts. The historical heart of the account is his martyrdom in defence of the holiest shrine."
+    ],
+    lesson:
+      "Devotion to what is sacred, joined with the courage to defend it, is honoured above life itself.",
+    gurbani:
+      "Baba Deep Singh Ji's life united deep study of Gurbani with the readiness to defend justice that the Gurus taught.",
+    forKids:
+      "Baba Deep Singh Ji loved studying the holy scriptures and was also very brave. When the Golden Temple was harmed, he led Sikhs to protect it, and gave his life doing so. He is remembered as a great hero.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Baba_Deep_Singh",
+    tags: ["martyr", "courage", "harmandir-sahib"]
+  },
+  {
+    id: "banda-singh-sirhind",
+    figureId: "banda-singh-bahadur",
+    title: "Banda Singh Bahadur and the First Sikh Rule",
+    status: "historical",
+    era: "1710–1716",
+    summary:
+      "Leading the Khalsa after Guru Gobind Singh Ji, Baba Banda Singh Bahadur established a just rule and stood for the oppressed.",
+    body: [
+      "Commissioned by Guru Gobind Singh Ji, Baba Banda Singh Bahadur led the Khalsa after the Guru's passing. In 1710 his forces won the Battle of Chappar Chiri and took Sirhind.",
+      "He established an early Sikh administration, struck coins in the name of the Gurus, and introduced reforms — including measures against the oppressive landlord system, granting rights to those who tilled the land.",
+      "Captured by Mughal forces, he was martyred in 1716, remaining steadfast in his faith to the end."
+    ],
+    lesson:
+      "Faith includes standing against tyranny and lifting up the oppressed — justice is part of devotion.",
+    gurbani:
+      "His leadership reflected the Gurus' teaching that spirituality and the defence of the vulnerable belong together (Miri-Piri).",
+    forKids:
+      "Baba Banda Singh Bahadur led the Sikhs after Guru Gobind Singh Ji. He won important battles, helped poor farmers, and stood up to cruel rulers. He stayed brave and true to his faith, even at the very end.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Banda_Singh_Bahadur",
+    tags: ["leader", "justice", "martyr"]
   }
 ];
