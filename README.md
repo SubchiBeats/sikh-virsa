@@ -3,6 +3,8 @@
 Virsa is a mobile-friendly, accuracy-first guide to Sikh history, traditional
 accounts, Gurbani, Sikh teachings, and daily Nitnem practice.
 
+**Live website:** https://subchibeats.github.io/sikh-virsa/
+
 > **ੴ Virsa** (ਵਿਰਸਾ) means *heritage / inheritance* — our roots, passed on.
 
 ## What is inside
