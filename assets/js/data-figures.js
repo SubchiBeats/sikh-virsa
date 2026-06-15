@@ -600,5 +600,186 @@ window.VIRSA.figures = [
       "Baba Banda Singh Bahadur Ji was a strong leader who helped the Sikhs after Guru Gobind Singh Ji. He stood up against cruel rulers and helped poor farmers. He stayed brave and true to his faith, even at the very end.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Banda_Singh_Bahadur",
     tags: ["leader", "reformer", "martyr", "justice"]
+  },
+  {
+    id: "jassa-singh-ahluwalia",
+    type: "figure",
+    order: 108,
+    name: "Jassa Singh Ahluwalia",
+    gurmukhi: "ਜੱਸਾ ਸਿੰਘ ਆਹਲੂਵਾਲੀਆ",
+    title: "Supreme Leader of the Dal Khalsa",
+    born: "1718",
+    passed: "1783",
+    birthplace: "Ahlu, near Lahore",
+    icon: "khanda",
+    relevance:
+      "United the Sikhs during the perilous 18th century, leading the Dal Khalsa and helping carry the community from persecution toward sovereignty.",
+    summary: [
+      "Jassa Singh Ahluwalia rose to lead the Dal Khalsa — the united Sikh fighting force — during the most dangerous years of persecution, when a price was placed on every Sikh head.",
+      "Honoured with the title 'Sultan-ul-Qaum' (King of the Nation), he united the misls (confederacies), struck coin in the name of the Gurus, and recovered Sikh fortunes after the great massacres.",
+      "His leadership helped bridge the era of survival and the rise of Sikh power in Punjab."
+    ],
+    contributions: [
+      "Led the Dal Khalsa through the years of persecution.",
+      "United the Sikh misls and recovered Sikh strength after the Ghallugharas.",
+      "Honoured as 'Sultan-ul-Qaum', King of the Nation."
+    ],
+    gurbani:
+      "His leadership lived out the Gurus' call to Chardi Kala — rising again, unbroken, through the darkest trials.",
+    forKids:
+      "Jassa Singh Ahluwalia was a brave leader who held the Sikhs together during very dangerous times, when their enemies tried to wipe them out. He united them and helped them grow strong again.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Jassa_Singh_Ahluwalia",
+    tags: ["leader", "warrior", "misls", "courage"]
+  },
+  {
+    id: "akali-phula-singh",
+    type: "figure",
+    order: 109,
+    name: "Akali Phula Singh Ji",
+    gurmukhi: "ਅਕਾਲੀ ਫੂਲਾ ਸਿੰਘ ਜੀ",
+    title: "Nihang Leader & Jathedar of the Akal Takht",
+    born: "c. 1761",
+    passed: "1823",
+    birthplace: "Punjab",
+    icon: "khanda",
+    relevance:
+      "A fearless Nihang Singh general and Jathedar of the Akal Takht, remembered for upholding Sikh discipline without fear or favour — even toward a Maharaja.",
+    summary: [
+      "Akali Phula Singh Ji was a revered leader of the Nihang Singhs and Jathedar of the Akal Takht, the highest seat of Sikh temporal authority.",
+      "He is famously remembered for holding even Maharaja Ranjit Singh accountable to Sikh discipline, summoning the Maharaja to the Akal Takht for a transgression — a powerful reminder that no one is above the Panth.",
+      "A formidable general, he gave his life in battle in 1823, fighting for the Khalsa."
+    ],
+    contributions: [
+      "Jathedar of the Akal Takht; leader of the Nihang Singhs.",
+      "Upheld Sikh discipline and accountability without fear or favour.",
+      "A fearless general who fell in battle in 1823."
+    ],
+    gurbani:
+      "He embodied the principle that the Panth and the Guru's discipline stand above every worldly rank or power.",
+    forKids:
+      "Akali Phula Singh Ji was a brave Nihang leader. He was so fair that he even held the king himself to the rules of the community — showing that nobody is above doing what is right.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Akali_Phula_Singh",
+    tags: ["nihang", "akal-takht", "warrior", "discipline"]
+  },
+  {
+    id: "ranjit-singh",
+    type: "figure",
+    order: 110,
+    name: "Maharaja Ranjit Singh Ji",
+    gurmukhi: "ਮਹਾਰਾਜਾ ਰਣਜੀਤ ਸਿੰਘ ਜੀ",
+    title: "Founder of the Sikh Empire · 'Sher-e-Punjab'",
+    born: "1780",
+    passed: "1839",
+    birthplace: "Gujranwala (now Pakistan)",
+    icon: "khanda",
+    relevance:
+      "Founder of the Sikh Empire, who united Punjab under a strong and notably tolerant rule, and adorned Sri Harmandir Sahib with gold and marble.",
+    summary: [
+      "Rising from the leadership of a single misl, Ranjit Singh captured Lahore in 1799 and was proclaimed Maharaja in 1801, founding the Sikh Empire (Sarkar-e-Khalsa).",
+      "Known as 'Sher-e-Punjab' (the Lion of Punjab), he built a powerful, modern Khalsa Army and ruled a diverse realm with notable religious tolerance — his court and administration included Sikhs, Hindus, and Muslims alike.",
+      "A devoted patron of the faith, he had Sri Harmandir Sahib overlaid with gold and marble, giving the world the 'Golden Temple'. His empire stood for four decades until it fell to the British a decade after his death."
+    ],
+    contributions: [
+      "Founded and unified the Sikh Empire from Lahore (1801).",
+      "Built a modern Khalsa Army and ruled with religious tolerance.",
+      "Adorned Sri Harmandir Sahib with gold and marble.",
+      "Remembered as 'Sher-e-Punjab', the Lion of Punjab."
+    ],
+    gurbani:
+      "His rule is remembered for treating people of all faiths with respect — an echo of the Gurus' vision of one humanity.",
+    forKids:
+      "Maharaja Ranjit Singh Ji united Punjab into the Sikh Empire and was called the 'Lion of Punjab'. He was fair to people of all religions, and he had the Golden Temple covered in beautiful gold.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Maharaja_Ranjit_Singh",
+    tags: ["empire", "leader", "tolerance", "golden-temple"]
+  },
+  {
+    id: "hari-singh-nalwa",
+    type: "figure",
+    order: 111,
+    name: "Hari Singh Nalwa",
+    gurmukhi: "ਹਰੀ ਸਿੰਘ ਨਲਵਾ",
+    title: "Commander-in-Chief of the Khalsa Army",
+    born: "1791",
+    passed: "1837",
+    birthplace: "Gujranwala (now Pakistan)",
+    icon: "shield",
+    relevance:
+      "The legendary general of the Sikh Empire who secured its north-western frontier, remembered as one of history's most formidable commanders.",
+    summary: [
+      "Hari Singh Nalwa was the foremost general of Maharaja Ranjit Singh's Khalsa Army, leading campaigns that extended and secured the empire's frontiers.",
+      "He is especially remembered for holding the dangerous north-western frontier — the Khyber region — where his name alone is said to have struck fear into opposing forces.",
+      "He fell in 1837 at the Battle of Jamrud, defending the frontier of the Sikh Empire."
+    ],
+    contributions: [
+      "Commander-in-Chief of the Khalsa Army of the Sikh Empire.",
+      "Secured the empire's north-western frontier.",
+      "Fell in battle at Jamrud in 1837."
+    ],
+    gurbani:
+      "His courage reflected the Khalsa ideal of the saint-soldier — strength devoted to the protection of the realm and its people.",
+    forKids:
+      "Hari Singh Nalwa was a famously brave general of the Sikh Empire. He protected the kingdom's borders so well that even powerful enemies were afraid of him.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Hari_Singh_Nalwa",
+    tags: ["general", "empire", "warrior", "courage"]
+  },
+  {
+    id: "mata-sahib-kaur",
+    type: "figure",
+    order: 112,
+    name: "Mata Sahib Kaur Ji",
+    gurmukhi: "ਮਾਤਾ ਸਾਹਿਬ ਕੌਰ ਜੀ",
+    title: "Mother of the Khalsa",
+    born: "1681",
+    passed: "1747",
+    birthplace: "Rohtas (now Pakistan)",
+    icon: "lotus",
+    relevance:
+      "Honoured as the Mother of the Khalsa, whose gift of sweetness to the Amrit shaped the very character of the Khalsa.",
+    summary: [
+      "Mata Sahib Kaur Ji is revered as the spiritual Mother of the Khalsa.",
+      "Tradition holds that at the founding of the Khalsa, as the Amrit was being prepared, she added patashe (sugar crystals) to it — so that the Khalsa would carry sweetness and compassion alongside courage and strength.",
+      "She remained a guiding and unifying presence for the Sikh community, and is remembered in the Khalsa's collective memory with deep love and reverence."
+    ],
+    contributions: [
+      "Honoured as the Mother of the Khalsa.",
+      "Her gift of sweetness to the Amrit shaped the Khalsa's character of compassion with courage.",
+      "A guiding, unifying presence for the community."
+    ],
+    gurbani:
+      "Her gift expresses a core Sikh truth: that true strength is married to humility and compassion.",
+    forKids:
+      "Mata Sahib Kaur Ji is called the Mother of the Khalsa. When the special Amrit was being made, she added sugar to it — so that Sikhs would always be sweet and kind as well as brave and strong.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Mata_Sahib_Kaur",
+    tags: ["khalsa", "mother-of-khalsa", "compassion"]
+  },
+  {
+    id: "bhagat-puran-singh",
+    type: "figure",
+    order: 113,
+    name: "Bhagat Puran Singh Ji",
+    gurmukhi: "ਭਗਤ ਪੂਰਨ ਸਿੰਘ ਜੀ",
+    title: "Humanitarian · Founder of Pingalwara",
+    born: "1904",
+    passed: "1992",
+    birthplace: "Rajewal, Punjab",
+    icon: "hands",
+    relevance:
+      "A modern embodiment of seva, who devoted his life to caring for the sick, disabled, and abandoned, founding the Pingalwara home in Amritsar.",
+    summary: [
+      "Bhagat Puran Singh Ji gave his life to selfless service, caring for those whom society had abandoned — the sick, the disabled, the orphaned, and the dying.",
+      "For decades he personally carried a severely disabled boy, Piara Singh, on his back, and from this devotion grew the All India Pingalwara in Amritsar, a home that continues to care for thousands.",
+      "He was also an early and tireless voice for the environment in Punjab, warning against pollution and the loss of trees and clean water — seva extended to the Earth itself."
+    ],
+    contributions: [
+      "Founded the Pingalwara home for the sick, disabled, and abandoned.",
+      "A lifelong embodiment of selfless service (seva).",
+      "An early environmental campaigner in Punjab."
+    ],
+    gurbani:
+      "His life lived out the Gurbani vision of seeing and serving the Divine Light in every person, especially the most vulnerable.",
+    forKids:
+      "Bhagat Puran Singh Ji spent his whole life caring for people who were sick or disabled and had no one else. He started a special home called Pingalwara to look after them. He showed that helping others is the highest kind of love.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bhagat_Puran_Singh",
+    tags: ["seva", "humanitarian", "modern", "environment"]
   }
 ];

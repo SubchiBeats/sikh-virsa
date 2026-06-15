@@ -444,3 +444,52 @@ html[data-theme="dark"] .callout.gurbani-link { border-color: #9db4e6; }
   font-size: .9rem;
 }
 .kids-banner strong { color: var(--accent-ink); }
+
+/* ===================== Added sections (v3) ============================== */
+
+/* Timeline */
+.timeline { position: relative; margin-top: 8px; }
+.timeline::before { content: ""; position: absolute; left: 71px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+@media (max-width: 560px) { .timeline::before { left: 55px; } }
+.tl-item { position: relative; }
+.tl-head { width: 100%; display: flex; align-items: flex-start; gap: 14px; background: transparent; border: 0; text-align: left; cursor: pointer; font: inherit; color: inherit; padding: 11px 6px; border-radius: 10px; }
+.tl-head:hover { background: var(--surface-2); }
+.tl-year { flex: 0 0 58px; text-align: right; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: var(--accent-ink); padding-top: 2px; }
+@media (max-width: 560px) { .tl-year { flex-basis: 44px; font-size: .78rem; } }
+.tl-dot { position: absolute; left: 71px; top: 17px; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); border: 3px solid var(--surface); transform: translateX(-50%); box-shadow: 0 0 0 1px var(--line); }
+@media (max-width: 560px) { .tl-dot { left: 55px; } }
+.tl-dot.era-guru { background: var(--kesari); }
+.tl-dot.era-18c { background: #9a6b3f; }
+.tl-dot.era-empire { background: var(--gold); }
+.tl-dot.era-modern { background: var(--navy); }
+html[data-theme="dark"] .tl-dot.era-modern { background: #9db4e6; }
+.tl-main { display: flex; flex-direction: column; flex: 1 1 auto; padding-left: 16px; min-width: 0; }
+.tl-title { font-weight: 700; font-size: 1.02rem; }
+.tl-text { color: var(--ink-soft); font-size: .9rem; }
+.tl-chevron { flex: none; color: var(--ink-soft); transition: transform .2s; padding-top: 3px; }
+.tl-item.open .tl-chevron { transform: rotate(180deg); }
+.tl-more { display: none; margin: -2px 0 10px 88px; padding: 12px 14px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+@media (max-width: 560px) { .tl-more { margin-left: 62px; } }
+.tl-item.open .tl-more { display: block; animation: fade .25s ease; }
+.tl-more p { margin: 0 0 8px; font-size: .92rem; }
+
+/* Ceremonies */
+.ceremony-list { display: grid; gap: 14px; }
+.ceremony-card { padding: 18px; }
+.cer-head { display: flex; gap: 14px; align-items: center; margin-bottom: 8px; }
+.cer-head h3 { margin: 0; font-size: 1.12rem; }
+.cer-when { color: var(--ink-soft); font-size: .85rem; margin-top: 2px; }
+.cer-steps { margin: 6px 0 0; padding-left: 1.2em; }
+.cer-steps li { margin-bottom: 8px; font-size: .95rem; }
+.callout.avoid { border-left: 4px solid var(--ink-soft); background: var(--surface-2); padding: 12px 14px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.callout.avoid .label { color: var(--ink-soft); }
+
+/* 1984 Remembrance */
+.note-box.warn { border-color: color-mix(in srgb, #b4451f 55%, var(--line)); background: color-mix(in srgb, #b4451f 9%, var(--surface)); }
+.tragedy-list { display: grid; gap: 16px; }
+.tragedy-card { padding: 20px; border-left: 4px solid color-mix(in srgb, var(--navy) 55%, var(--line)); }
+html[data-theme="dark"] .tragedy-card { border-left-color: #9db4e6; }
+.tragedy-head { display: flex; align-items: center; gap: 10px; justify-content: space-between; flex-wrap: wrap; margin-bottom: 4px; }
+.tragedy-head h3 { margin: 0; font-size: 1.2rem; }
+.tragedy-summary { font-weight: 600; color: var(--ink); margin: .3em 0 .6em; }
+.tragedy-card .source-links { margin-top: 12px; }

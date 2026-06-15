@@ -271,7 +271,7 @@
           '<div class="filters" id="figFilters">' +
             '<button class="filter-chip" data-f="all" aria-pressed="true" type="button">All</button>' +
             '<button class="filter-chip" data-f="guru" aria-pressed="false" type="button">Gurus</button>' +
-            '<button class="filter-chip" data-f="figure" aria-pressed="false" type="button">Devotees &amp; Warriors</button>' +
+            '<button class="filter-chip" data-f="figure" aria-pressed="false" type="button">Notable Figures</button>' +
             '<button class="filter-chip" data-f="scripture" aria-pressed="false" type="button">The Eternal Guru</button>' +
           "</div>" +
         "</div>" +
@@ -646,10 +646,13 @@
   /* ------------------------------ More hub ------------------------------- */
   function viewMore() {
     var items = [
+      { href: "#/timeline", emoji: "🕰️", title: "Timeline of Sikh History", sub: "Where we began, and where we are today" },
+      { href: "#/ceremonies", emoji: "👪", title: "Sikh Life Ceremonies", sub: "Birth, naming, marriage & last rites" },
       { href: "#/festivals", emoji: "🪔", title: "Festivals & Gurpurabs", sub: "The Sikh year of celebration & remembrance" },
       { href: "#/fives", emoji: "🪯", title: "The Five Ks", sub: "The sacred articles of faith of the Khalsa" },
       { href: "#/glossary", emoji: "📖", title: "Glossary", sub: "Sikh words, explained simply" },
       { href: "#/gurdwaras", emoji: "🗺️", title: "Historical Gurdwaras", sub: "A map of sacred places" },
+      { href: "#/remembrance", emoji: "🕯️", title: "1984 — Remembrance", sub: "Remembering the tragedies against Sikhs" },
       { href: "#/about", emoji: "🪷", title: "About & Sources", sub: "How Virsa protects accuracy" }
     ];
     app.innerHTML =
@@ -807,12 +810,117 @@
     });
   }
 
+  /* ------------------------------ Timeline ------------------------------- */
+  function viewTimeline() {
+    var eras = D.timelineEras || [];
+    var eraChips = '<button class="filter-chip" data-f="all" aria-pressed="true" type="button">All</button>' +
+      eras.map(function (e) { return '<button class="filter-chip" data-f="' + esc(e.id) + '" aria-pressed="false" type="button">' + esc(e.label) + "</button>"; }).join("");
+    var rows = (D.timeline || []).map(function (it) {
+      var more = it.more
+        ? '<div class="tl-more" id="tlmore-' + esc(it.id) + '"><p>' + esc(it.more) + "</p>" +
+            (it.link ? '<a class="text-link" href="' + esc(it.link.href) + '">' + esc(it.link.label) + "</a>" : "") + "</div>"
+        : "";
+      return (
+        '<div class="tl-item" data-era="' + esc(it.era) + '">' +
+          '<button class="tl-head" type="button" aria-expanded="false"' + (it.more ? ' aria-controls="tlmore-' + esc(it.id) + '"' : "") + ">" +
+            '<span class="tl-dot era-' + esc(it.era) + '" aria-hidden="true"></span>' +
+            '<span class="tl-year">' + esc(it.year) + "</span>" +
+            '<span class="tl-main"><span class="tl-title">' + esc(it.title) + "</span>" +
+              '<span class="tl-text">' + esc(it.text) + "</span></span>" +
+            (it.more ? '<span class="tl-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>' : "") +
+          "</button>" + more +
+        "</div>"
+      );
+    }).join("");
+    app.innerHTML =
+      '<section class="view-enter">' +
+      '<a class="back-link" href="#/more">← More</a>' +
+      '<div class="section-head"><div class="eyebrow">Where we began, where we are</div><h1>Timeline of Sikh History</h1>' +
+      '<p class="lede">From the birth of Guru Nanak Dev Ji to the global Sikh community of today. Tap any moment to read more. Dates are commonly-cited; some are approximate or debated across sources.</p></div>' +
+      '<div class="toolbar"><div class="filters" id="tlFilters">' + eraChips + "</div></div>" +
+      '<div class="timeline" id="tlList">' + rows + "</div>" +
+      "</section>";
+    qsa("#tlList .tl-head").forEach(function (head) {
+      head.addEventListener("click", function () {
+        var item = head.closest(".tl-item");
+        var open = item.classList.toggle("open");
+        head.setAttribute("aria-expanded", open);
+      });
+    });
+    var filters = byId("tlFilters");
+    qsa(".filter-chip", filters).forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var f = chip.getAttribute("data-f");
+        qsa(".filter-chip", filters).forEach(function (c) { c.setAttribute("aria-pressed", c === chip); });
+        qsa("#tlList .tl-item").forEach(function (it) {
+          it.style.display = (f === "all" || it.getAttribute("data-era") === f) ? "" : "none";
+        });
+      });
+    });
+  }
+
+  /* ----------------------------- Ceremonies ------------------------------ */
+  function viewCeremonies() {
+    var res = D.ceremoniesResource || {};
+    var kids = kidsOn();
+    var cards = (D.ceremonies || []).map(function (c) {
+      var main = kids && c.forKids
+        ? '<div class="callout kids" style="margin-top:10px"><span class="label">Simple version</span><p>' + esc(c.forKids) + "</p></div>"
+        : '<ol class="cer-steps">' + (c.steps || []).map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ol>";
+      return (
+        '<article class="card ceremony-card">' +
+          '<div class="cer-head"><span class="detail-emblem">' + icon(c.icon) + "</span>" +
+            "<div><h3>" + esc(c.name) + ' <span class="gurmukhi" lang="pa">' + esc(c.gurmukhi || "") + "</span></h3>" +
+            '<div class="cer-when">' + esc(c.when) + "</div></div></div>" +
+          main +
+          (!kids && c.expected ? '<div class="callout lesson" style="margin:12px 0 0"><span class="label">What is expected</span><p>' + esc(c.expected) + "</p></div>" : "") +
+          (!kids && c.avoid ? '<div class="callout avoid" style="margin:10px 0 0"><span class="label">Not part of Sikhi</span><p>' + esc(c.avoid) + "</p></div>" : "") +
+        "</article>"
+      );
+    }).join("");
+    app.innerHTML =
+      '<section class="view-enter">' +
+      '<a class="back-link" href="#/more">← More</a>' +
+      '<div class="section-head"><div class="eyebrow">Life’s moments</div><h1>Sikh Life Ceremonies</h1>' +
+      '<p class="lede">What is expected at the great moments of life — birth &amp; naming, raising children, marriage, and last rites — in the spirit of the Sikh Rehat Maryada.</p></div>' +
+      '<div class="note-box mt-1">📜 ' + esc(D.ceremoniesNote || "") + ' <a class="text-link" href="' + esc(res.rehatMaryada || "https://www.sgpc.net") + '" target="_blank" rel="noopener">Read the Sikh Rehat Maryada ↗</a></div>' +
+      '<div class="ceremony-list">' + cards + "</div>" +
+      "</section>";
+  }
+
+  /* ------------------------- 1984 Remembrance ---------------------------- */
+  function viewRemembrance() {
+    var entries = (D.remembrance || []).map(function (e) {
+      var src = (e.sources || []).map(function (s) { return '<a class="btn btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + " ↗</a>"; }).join("");
+      return (
+        '<article class="card tragedy-card">' +
+          '<div class="tragedy-head"><h3>' + esc(e.title) + "</h3>" + (e.period ? '<span class="badge badge-time">' + esc(e.period) + "</span>" : "") + "</div>" +
+          '<p class="tragedy-summary">' + esc(e.summary) + "</p>" +
+          '<div class="prose">' + (e.body || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>" +
+          (src ? '<div class="source-links">' + src + "</div>" : "") +
+        "</article>"
+      );
+    }).join("");
+    var genSrc = (D.remembranceSources || []).map(function (s) { return '<a class="btn btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + " ↗</a>"; }).join("");
+    app.innerHTML =
+      '<section class="view-enter">' +
+      '<a class="back-link" href="#/more">← More</a>' +
+      '<div class="section-head"><div class="eyebrow">Yaad · Remembrance</div><h1>1984 — Remembering the Tragedies</h1>' +
+      '<p class="lede">Told from documented Sikh and independent human-rights accounts — so that the truth is remembered, never minimised.</p></div>' +
+      '<div class="note-box warn mt-1">⚠️ ' + esc(D.remembranceNote || "") + "</div>" +
+      '<div class="tragedy-list">' + entries + "</div>" +
+      '<div class="about-block mt-2"><h2>Further documentation</h2><div class="source-links">' + genSrc + "</div></div>" +
+      '<p class="streak-note">Remembered with dignity, in Chardi Kala — that such cruelty is never forgotten, and never repeated against anyone.</p>' +
+      "</section>";
+  }
+
   /* ------------------------------- router -------------------------------- */
   var routes = {
     "": viewHome, "home": viewHome, "figures": viewFigures, "stories": viewStories,
     "gurbani": viewGurbani, "nitnem": viewNitnem, "more": viewMore,
     "festivals": viewFestivals, "fives": viewFives, "glossary": viewGlossary,
-    "gurdwaras": viewGurdwaras, "about": viewAbout
+    "gurdwaras": viewGurdwaras, "timeline": viewTimeline, "ceremonies": viewCeremonies,
+    "remembrance": viewRemembrance, "about": viewAbout
   };
   function router() {
     var hash = location.hash.replace(/^#\/?/, "");
@@ -836,7 +944,8 @@
   function setActiveTab(name) {
     var map = {
       figure: "figures", story: "stories", "": "home",
-      festivals: "more", fives: "more", glossary: "more", gurdwaras: "more", about: "more", more: "more"
+      festivals: "more", fives: "more", glossary: "more", gurdwaras: "more", about: "more", more: "more",
+      timeline: "more", ceremonies: "more", remembrance: "more"
     };
     var active = map[name] || name;
     qsa(".tab").forEach(function (t) { t.classList.toggle("active", t.getAttribute("data-tab") === active); });

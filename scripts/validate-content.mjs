@@ -12,7 +12,10 @@ const dataFiles = [
   "assets/js/data-fives.js",
   "assets/js/data-festivals.js",
   "assets/js/data-glossary.js",
-  "assets/js/data-gurdwaras.js"
+  "assets/js/data-gurdwaras.js",
+  "assets/js/data-timeline.js",
+  "assets/js/data-ceremonies.js",
+  "assets/js/data-1984.js"
 ];
 const scriptFiles = ["assets/js/app.js", ...dataFiles];
 const errors = [];
