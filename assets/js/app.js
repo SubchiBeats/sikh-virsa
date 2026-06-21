@@ -137,6 +137,64 @@
     );
   }
 
+  /* ----------------------- bookmarks / share / report -------------------- */
+  var REPO = "SubchiBeats/sikh-virsa";
+  var SAVED = "virsa.saved.v1";
+  function getSaved() { var s = store.get(SAVED, { items: [] }); if (!s.items) s.items = []; return s; }
+  function isSaved(type, id) { return getSaved().items.some(function (x) { return x.type === type && x.id === id; }); }
+  function toggleSaved(type, id) {
+    var s = getSaved(), found = -1;
+    s.items.forEach(function (x, i) { if (x.type === type && x.id === id) found = i; });
+    if (found >= 0) s.items.splice(found, 1); else s.items.push({ type: type, id: id });
+    store.set(SAVED, s);
+    return found < 0; // true when newly saved
+  }
+  function correctionUrl(label) {
+    var title = "Correction: " + label;
+    var body = "Page: " + label + "\nLink: " + location.href +
+      "\n\nWhat should be corrected:\n\nProposed correction:\n\nStrongest source(s):\n";
+    return "https://github.com/" + REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
+  }
+  function toast(msg) {
+    var t = byId("vToast");
+    if (!t) { t = document.createElement("div"); t.id = "vToast"; t.className = "v-toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(t._tmo); t._tmo = setTimeout(function () { t.classList.remove("show"); }, 2200);
+  }
+  function shareCurrent(title) {
+    var url = location.href;
+    if (navigator.share) { navigator.share({ title: "Virsa — " + title, url: url }).catch(function () {}); }
+    else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(function () { toast("Link copied to clipboard"); }, function () { toast(url); }); }
+    else { toast(url); }
+  }
+  function detailActions(type, id, label) {
+    var saved = isSaved(type, id);
+    return (
+      '<div class="detail-actions" data-atype="' + esc(type) + '" data-aid="' + esc(id) + '" data-alabel="' + esc(label) + '">' +
+        '<button class="btn btn-sm btn-save' + (saved ? " is-saved" : "") + '" type="button" data-save aria-pressed="' + saved + '">' +
+          '<span class="save-ico" aria-hidden="true">' + (saved ? "★" : "☆") + '</span> <span class="save-txt">' + (saved ? "Saved" : "Save") + "</span></button>" +
+        '<button class="btn btn-sm btn-ghost" type="button" data-share>Share</button>' +
+        '<a class="btn btn-sm btn-ghost" href="' + esc(correctionUrl(label)) + '" target="_blank" rel="noopener">Suggest a correction</a>' +
+      "</div>"
+    );
+  }
+  function wireDetailActions() {
+    var host = qs(".detail-actions");
+    if (!host) return;
+    var type = host.getAttribute("data-atype"), id = host.getAttribute("data-aid"), label = host.getAttribute("data-alabel");
+    var saveBtn = qs("[data-save]", host);
+    if (saveBtn) saveBtn.addEventListener("click", function () {
+      var nowSaved = toggleSaved(type, id);
+      saveBtn.classList.toggle("is-saved", nowSaved);
+      saveBtn.setAttribute("aria-pressed", nowSaved);
+      qs(".save-ico", saveBtn).textContent = nowSaved ? "★" : "☆";
+      qs(".save-txt", saveBtn).textContent = nowSaved ? "Saved" : "Save";
+      toast(nowSaved ? "Saved" : "Removed from saved");
+    });
+    var shareBtn = qs("[data-share]", host);
+    if (shareBtn) shareBtn.addEventListener("click", function () { shareCurrent(label); });
+  }
+
   /* ------------------------- shared render pieces ------------------------ */
   function gurbaniCard(g, opts) {
     opts = opts || {};
@@ -350,10 +408,12 @@
         gurbaniBlock +
         kidsCallout +
         relatedBlock +
+        detailActions("figure", f.id, f.name) +
         '<hr class="divider" />' +
         '<div class="cluster"><a class="btn btn-sm" href="' + esc(f.verifyUrl) + '" target="_blank" rel="noopener">Further reading ↗</a>' +
           '<a class="btn btn-sm btn-ghost" href="#/about">About our sources</a></div>' +
       "</section>";
+    wireDetailActions();
   }
 
   function viewStoryDetail(id) {
@@ -382,10 +442,12 @@
         '<div class="callout lesson"><span class="label">The teaching</span><h3 style="margin:.2em 0 .3em">What this story teaches</h3><p>' + esc(s.lesson) + "</p></div>" +
         (!kids && s.gurbani ? '<div class="callout gurbani-link"><span class="label">Connection to Gurbani</span><p>' + esc(s.gurbani) + "</p></div>" : "") +
         (!kids && s.forKids ? '<div class="callout kids"><span class="label">For younger readers</span><p>' + esc(s.forKids) + "</p></div>" : "") +
+        detailActions("story", s.id, s.title) +
         '<hr class="divider" />' +
         '<div class="cluster"><a class="btn btn-sm" href="' + esc(s.verifyUrl) + '" target="_blank" rel="noopener">Further reading ↗</a>' +
           (fig ? '<a class="btn btn-sm btn-ghost" href="#/figure/' + esc(fig.id) + '">More about ' + esc(shortName(fig)) + "</a>" : "") + "</div>" +
       "</section>";
+    wireDetailActions();
   }
 
   function viewGurbani() {
@@ -411,6 +473,10 @@
           '<span>🌅 <strong>Today’s Hukamnama</strong> — the daily message read from Sri Guru Granth Sahib Ji at Sri Harmandir Sahib.</span>' +
           '<a class="btn btn-sm" href="https://www.sikhnet.com/hukam" target="_blank" rel="noopener">Read today’s Hukamnama ↗</a>' +
         "</div>" +
+        '<div class="note-box mt-1">📚 <strong>How we source Gurbani.</strong> Every verse is labelled by type and cites its exact ang (page). For the gold-standard, peer-reviewed Gurbani text and translations — the same data trusted by Gurdwaras worldwide — we point to ' +
+          '<a class="text-link" href="https://www.banidb.com/" target="_blank" rel="noopener">BaniDB</a> and ' +
+          '<a class="text-link" href="https://shabados.com/" target="_blank" rel="noopener">Shabad OS</a>. ' +
+          'Spot something to correct? <a class="text-link" href="' + esc(correctionUrl("Gurbani")) + '" target="_blank" rel="noopener">Suggest a correction ↗</a>.</div>' +
         '<h3 class="related-head">The full collection</h3>' +
         '<p class="streak-note" style="margin-top:-6px">Each item is labelled by type and source. Translations are interpretive; use “View source text” to read SGGS lines in context.</p>' +
         '<div class="grid grid-cards" id="gurbaniGrid">' + list + "</div>" +
@@ -574,9 +640,13 @@
             '<a class="btn btn-sm" href="https://www.sikhnet.com/" target="_blank" rel="noopener">SikhNet ↗</a>' +
             '<a class="btn btn-sm" href="https://www.sikhiwiki.org/" target="_blank" rel="noopener">SikhiWiki ↗</a>' +
             '<a class="btn btn-sm" href="https://www.srigranth.org/" target="_blank" rel="noopener">SriGranth ↗</a>' +
-          "</div></div>" +
+            '<a class="btn btn-sm" href="https://www.banidb.com/" target="_blank" rel="noopener">BaniDB ↗</a>' +
+            '<a class="btn btn-sm" href="https://shabados.com/" target="_blank" rel="noopener">Shabad OS ↗</a>' +
+          "</div>" +
+          '<p class="streak-note mt-1">For Gurbani specifically, BaniDB and Shabad OS are peer-reviewed, sangat-corrected open databases — the same data Gurdwaras and SikhiToTheMax rely on.</p></div>' +
 
-        '<div class="note-box"><strong>Help us improve it.</strong> If you are a Granthi, scholar, historian, or knowledgeable reader and spot anything that should be corrected, please share the claim, proposed correction, and strongest available source.</div>' +
+        '<div class="note-box"><strong>Help us improve it.</strong> If you are a Granthi, scholar, historian, or knowledgeable reader and spot anything that should be corrected, please share the claim, the proposed correction, and the strongest available source.' +
+          '<div class="cluster mt-1"><a class="btn btn-sm" href="' + esc(correctionUrl("General feedback")) + '" target="_blank" rel="noopener">Suggest a correction on GitHub ↗</a></div></div>' +
 
         '<div class="about-block mt-2"><h2>Your data</h2>' +
           "<p>Your Nitnem streak and settings are stored only on this device, never sent anywhere. You can clear them any time.</p>" +
@@ -595,6 +665,29 @@
       resetStreak(); store.del("virsa.kids"); store.del("virsa.theme");
       byId("resetMsg").textContent = "All settings cleared. Refresh to see defaults.";
     });
+  }
+
+  function viewSaved() {
+    var s = getSaved();
+    var figs = [], sts = [];
+    s.items.forEach(function (it) {
+      if (it.type === "figure") { var f = (D.figures || []).find(function (x) { return x.id === it.id; }); if (f) figs.push(f); }
+      else if (it.type === "story") { var st = (D.stories || []).find(function (x) { return x.id === it.id; }); if (st) sts.push(st); }
+    });
+    var body;
+    if (!figs.length && !sts.length) {
+      body = '<div class="empty"><div class="big">☆</div><h2>Nothing saved yet</h2><p>Tap “Save” on any Guru, figure, or story to keep it here for later — it stays private on this device.</p><a class="btn btn-primary" href="#/figures">Browse the Gurus &amp; figures</a></div>';
+    } else {
+      body =
+        (figs.length ? '<h3 class="related-head">Gurus &amp; figures</h3><div class="grid grid-cards">' + figs.map(figureTile).join("") + "</div>" : "") +
+        (sts.length ? '<h3 class="related-head">Stories</h3><div class="grid grid-cards">' + sts.map(storyTile).join("") + "</div>" : "");
+    }
+    app.innerHTML =
+      '<section class="view-enter">' +
+      '<div class="section-head"><div class="eyebrow">Your collection</div><h1>Saved</h1>' +
+      '<p class="lede">Items you’ve saved, kept privately on this device.</p></div>' +
+      body +
+      "</section>";
   }
 
   function notFound() {
@@ -653,6 +746,7 @@
       { href: "#/glossary", emoji: "📖", title: "Glossary", sub: "Sikh words, explained simply" },
       { href: "#/gurdwaras", emoji: "🗺️", title: "Historical Gurdwaras", sub: "A map of sacred places" },
       { href: "#/remembrance", emoji: "🕯️", title: "1984 — Remembrance", sub: "Remembering the tragedies against Sikhs" },
+      { href: "#/saved", emoji: "⭐", title: "Saved", sub: "Your saved Gurus, figures & stories" },
       { href: "#/about", emoji: "🪷", title: "About & Sources", sub: "How Virsa protects accuracy" }
     ];
     app.innerHTML =
@@ -920,7 +1014,7 @@
     "gurbani": viewGurbani, "nitnem": viewNitnem, "more": viewMore,
     "festivals": viewFestivals, "fives": viewFives, "glossary": viewGlossary,
     "gurdwaras": viewGurdwaras, "timeline": viewTimeline, "ceremonies": viewCeremonies,
-    "remembrance": viewRemembrance, "about": viewAbout
+    "remembrance": viewRemembrance, "about": viewAbout, "saved": viewSaved
   };
   function router() {
     var hash = location.hash.replace(/^#\/?/, "");
@@ -945,7 +1039,7 @@
     var map = {
       figure: "figures", story: "stories", "": "home",
       festivals: "more", fives: "more", glossary: "more", gurdwaras: "more", about: "more", more: "more",
-      timeline: "more", ceremonies: "more", remembrance: "more"
+      timeline: "more", ceremonies: "more", remembrance: "more", saved: "more"
     };
     var active = map[name] || name;
     qsa(".tab").forEach(function (t) { t.classList.toggle("active", t.getAttribute("data-tab") === active); });
@@ -984,4 +1078,11 @@
   initChrome();
   if (!location.hash) location.replace("#/home");
   router();
+
+  // Register the service worker for offline + installable (https / localhost only).
+  if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("service-worker.js").catch(function () { /* offline support unavailable */ });
+    });
+  }
 })();

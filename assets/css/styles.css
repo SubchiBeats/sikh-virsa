@@ -493,3 +493,15 @@ html[data-theme="dark"] .tragedy-card { border-left-color: #9db4e6; }
 .tragedy-head h3 { margin: 0; font-size: 1.2rem; }
 .tragedy-summary { font-weight: 600; color: var(--ink); margin: .3em 0 .6em; }
 .tragedy-card .source-links { margin-top: 12px; }
+
+/* ===================== Added (v4): save / share / toast ================= */
+.detail-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 2px; }
+.btn-save .save-ico { font-size: 1.05em; line-height: 1; }
+.btn-save.is-saved { border-color: var(--accent); color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.v-toast {
+  position: fixed; left: 50%; bottom: calc(86px + env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(12px);
+  background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 999px; font-size: .88rem; font-weight: 600;
+  box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: .25s; z-index: 1300; max-width: 90vw; text-align: center;
+}
+.v-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+@media (min-width: 860px) { .v-toast { bottom: 28px; } }

@@ -14,6 +14,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- PWA: installable + offline -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Virsa" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -29,6 +36,9 @@
     </a>
 
     <div class="appbar-actions">
+      <a id="savedLink" class="icon-btn" href="#/saved" aria-label="Saved items" title="Saved">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      </a>
       <button id="kidsToggle" class="chip-toggle" type="button" aria-pressed="false" title="Switch between a simple version for children and the full version">
         <span class="chip-dot" aria-hidden="true"></span>
         <span class="chip-label">Kids mode</span>

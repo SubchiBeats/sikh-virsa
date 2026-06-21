@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Virsa">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e07a1f"/>
+      <stop offset="1" stop-color="#c79a3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="104" fill="url(#g)"/>
+  <g transform="translate(256 256) scale(12) translate(-12 -12.5)" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12.5" r="5.2"/>
+    <path d="M12 2.6c.7 1.7.7 3.5 0 5.1-.7-1.6-.7-3.4 0-5.1zM12 7v11"/>
+    <path d="M6.6 9c-1.6 1-2.5 2.4-2.5 3.8 0 1.4.9 2.8 2.5 3.8M17.4 9c1.6 1 2.5 2.4 2.5 3.8 0 1.4-.9 2.8-2.5 3.8"/>
+  </g>
+</svg>

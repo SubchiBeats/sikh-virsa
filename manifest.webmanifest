@@ -1,0 +1,22 @@
+{
+  "name": "Virsa — Sikh Heritage & Stories",
+  "short_name": "Virsa",
+  "description": "Explore Sikh history, the lives of the Gurus, timeless Sakhis, Gurbani, and a Nitnem companion — for kids and adults, with an accuracy-first approach.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf7ef",
+  "theme_color": "#1b2a4a",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "books", "lifestyle"],
+  "icons": [
+    {
+      "src": "assets/img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
