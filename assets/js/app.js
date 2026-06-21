@@ -330,6 +330,7 @@
             '<button class="filter-chip" data-f="all" aria-pressed="true" type="button">All</button>' +
             '<button class="filter-chip" data-f="guru" aria-pressed="false" type="button">Gurus</button>' +
             '<button class="filter-chip" data-f="figure" aria-pressed="false" type="button">Notable Figures</button>' +
+            '<button class="filter-chip" data-f="bhagat" aria-pressed="false" type="button">Bhagats</button>' +
             '<button class="filter-chip" data-f="scripture" aria-pressed="false" type="button">The Eternal Guru</button>' +
           "</div>" +
         "</div>" +
@@ -740,6 +741,8 @@
   function viewMore() {
     var items = [
       { href: "#/timeline", emoji: "🕰️", title: "Timeline of Sikh History", sub: "Where we began, and where we are today" },
+      { href: "#/beliefs", emoji: "🌟", title: "Core Beliefs & Values", sub: "The heart of the Sikh faith" },
+      { href: "#/women", emoji: "🌸", title: "Women in Sikhi", sub: "Their courage, grace & leadership" },
       { href: "#/ceremonies", emoji: "👪", title: "Sikh Life Ceremonies", sub: "Birth, naming, marriage & last rites" },
       { href: "#/festivals", emoji: "🪔", title: "Festivals & Gurpurabs", sub: "The Sikh year of celebration & remembrance" },
       { href: "#/fives", emoji: "🪯", title: "The Five Ks", sub: "The sacred articles of faith of the Khalsa" },
@@ -779,8 +782,10 @@
       '<div class="section-head"><div class="eyebrow">The Sikh year</div><h1>Festivals &amp; Gurpurabs</h1>' +
       '<p class="lede">Days of celebration and remembrance through the year.</p></div>' +
       '<div class="note-box mt-1">📅 ' + esc(D.festivalsNote || "") + "</div>" +
+      '<div id="nkUpcoming" class="card nk-panel" hidden></div>' +
       '<div class="festival-list">' + cards + "</div>" +
       "</section>";
+    renderUpcomingDates();
   }
 
   /* ------------------------------ Five Ks -------------------------------- */
@@ -1008,13 +1013,135 @@
       "</section>";
   }
 
+  /* --------------------------- Core Beliefs ------------------------------ */
+  function viewBeliefs() {
+    var cards = (D.beliefs || []).map(function (b) {
+      return (
+        '<article class="card belief-card">' +
+          '<h3>' + esc(b.name) + ' <span class="gurmukhi" lang="pa">' + esc(b.gurmukhi || "") + "</span></h3>" +
+          '<p class="belief-summary">' + esc(b.summary) + "</p>" +
+          '<p class="belief-detail">' + esc(b.detail) + "</p>" +
+        "</article>"
+      );
+    }).join("");
+    app.innerHTML =
+      '<section class="view-enter">' +
+      '<a class="back-link" href="#/more">← More</a>' +
+      '<div class="section-head"><div class="eyebrow">The heart of the faith</div><h1>Core Beliefs &amp; Values</h1>' +
+      '<p class="lede">' + esc(D.beliefsIntro || "") + "</p></div>" +
+      '<div class="belief-list">' + cards + "</div>" +
+      "</section>";
+  }
+
+  /* --------------------------- Women in Sikhi ---------------------------- */
+  function viewWomen() {
+    var women = (D.figures || []).filter(function (f) { return f.women === true; })
+      .sort(function (a, b) { return (a.order || 999) - (b.order || 999); });
+    app.innerHTML =
+      '<section class="view-enter">' +
+      '<a class="back-link" href="#/more">← More</a>' +
+      '<div class="section-head"><div class="eyebrow">Honouring their courage &amp; grace</div><h1>Women in Sikhi</h1>' +
+      '<p class="lede">From the first to recognise Guru Nanak Dev Ji, to warriors, builders of the Langar, and guides of the Panth — women have shaped Sikhi from its very beginning, as equals.</p></div>' +
+      '<div class="grid grid-cards">' + women.map(figureTile).join("") + "</div>" +
+      "</section>";
+  }
+
+  /* ------------------------------- Search -------------------------------- */
+  function buildSearchIndex() {
+    var idx = [];
+    function add(label, sub, href, parts) { idx.push({ label: label, sub: sub, href: href, text: parts.join(" ").toLowerCase() }); }
+    (D.figures || []).forEach(function (f) { add(f.name, f.title, "#/figure/" + f.id, [f.name, f.title, (f.tags || []).join(" "), f.relevance, f.gurmukhi]); });
+    (D.stories || []).forEach(function (s) { add(s.title, "Story", "#/story/" + s.id, [s.title, s.summary, (s.tags || []).join(" ")]); });
+    (D.beliefs || []).forEach(function (b) { add(b.name, "Belief", "#/beliefs", [b.name, b.summary, b.detail]); });
+    (D.glossary || []).forEach(function (t) { add(t.term, "Glossary", "#/glossary", [t.term, t.def, t.cat]); });
+    (D.timeline || []).forEach(function (t) { add(t.title, "Timeline · " + t.year, "#/timeline", [t.title, t.text, t.more]); });
+    (D.festivals || []).forEach(function (f) { add(f.name, "Festival", "#/festivals", [f.name, f.commemorates, f.significance]); });
+    (D.ceremonies || []).forEach(function (c) { add(c.name, "Ceremony", "#/ceremonies", [c.name, c.expected]); });
+    (D.gurdwaras || []).forEach(function (g) { add(g.name, "Gurdwara · " + g.place, "#/gurdwaras", [g.name, g.place, g.significance]); });
+    (D.fives || []).forEach(function (k) { add(k.name, "Five Ks", "#/fives", [k.name, k.meaning, k.significance]); });
+    (D.paaths || []).forEach(function (p) { add(p.name, "Nitnem bani", "#/nitnem", [p.name, p.description, p.author]); });
+    (D.gurbani || []).forEach(function (q) { add(q.theme || q.source, "Gurbani", "#/gurbani", [q.translation, q.transliteration, q.source, q.theme]); });
+    (D.remembrance || []).forEach(function (e) { add(e.title, "1984", "#/remembrance", [e.title, e.summary]); });
+    return idx;
+  }
+  function viewSearch() {
+    var idx = buildSearchIndex();
+    app.innerHTML =
+      '<section class="view-enter">' +
+      '<div class="section-head"><div class="eyebrow">Find anything</div><h1>Search</h1>' +
+      '<p class="lede">Search across the Gurus, figures, Bhagats, stories, beliefs, the timeline, festivals, Gurdwaras, the glossary, and more.</p></div>' +
+      '<div class="toolbar"><label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>' +
+        '<input id="globalSearch" type="search" placeholder="Search Virsa…" aria-label="Search Virsa" autocomplete="off" /></label></div>' +
+      '<div id="searchResults" class="search-results"></div>' +
+      '<div class="empty" id="searchHint"><div class="big">🔎</div>Type to search across everything in Virsa.</div>' +
+      "</section>";
+    var input = byId("globalSearch"), results = byId("searchResults"), hint = byId("searchHint");
+    if (input.focus) input.focus();
+    input.addEventListener("input", function () {
+      var q = input.value.trim().toLowerCase();
+      if (!q) { results.innerHTML = ""; hint.hidden = false; return; }
+      hint.hidden = true;
+      var matches = idx.filter(function (it) { return it.text.indexOf(q) >= 0; }).slice(0, 40);
+      if (!matches.length) { results.innerHTML = '<div class="empty"><div class="big">🔎</div>No matches for “' + esc(input.value) + '”.</div>'; return; }
+      results.innerHTML = matches.map(function (m) {
+        return '<a class="search-row" href="' + esc(m.href) + '"><span class="search-main">' + esc(m.label) + '</span><span class="search-sub">' + esc(m.sub || "") + "</span></a>";
+      }).join("");
+    });
+  }
+
+  /* ---------------- Nanakshahi exact dates (lazy, optional) -------------- */
+  var _nanak = null;
+  function ensureNanakshahi(cb) {
+    if (_nanak) { _nanak.then(cb); return; }
+    _nanak = import("https://cdn.jsdelivr.net/npm/nanakshahi/+esm")
+      .then(function (m) { return m; })
+      .catch(function () { return null; });
+    _nanak.then(cb);
+  }
+  function fmtNiceDate(d) {
+    try { return d.toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short", year: "numeric" }); }
+    catch (e) { return d.toDateString(); }
+  }
+  function renderUpcomingDates() {
+    var host = byId("nkUpcoming");
+    if (!host) return;
+    ensureNanakshahi(function (m) {
+      if (!m || !byId("nkUpcoming")) return;
+      try {
+        var nd = m.getNanakshahiDate(new Date());
+        var todayStr = nd.englishDate.monthName + " " + nd.englishDate.date + ", " + nd.englishDate.year + " N.S. · " + nd.englishDate.day;
+        var items = [], seen = {};
+        for (var i = 0; i < 80 && items.length < 10; i++) {
+          var d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() + i);
+          var gs = m.getGurpurabsForDate(d) || [];
+          for (var j = 0; j < gs.length && items.length < 10; j++) {
+            var g = gs[j], key = (g.en || "") + "|" + d.toDateString();
+            if (seen[key]) continue; seen[key] = 1;
+            items.push({ date: new Date(d), en: g.en, pa: g.pa });
+          }
+        }
+        var html = '<div class="nk-today">🗓️ Today is <strong>' + esc(todayStr) + "</strong> in the Nanakshahi calendar.</div>";
+        if (items.length) {
+          html += '<h4 class="nk-heading">Upcoming dates this year</h4><div class="nk-list">' +
+            items.map(function (it) {
+              return '<div class="nk-item"><span class="nk-date">' + esc(fmtNiceDate(it.date)) + '</span><span class="nk-name">' + esc(it.en || "") + (it.pa ? ' <span class="gurmukhi" lang="pa">' + esc(it.pa) + "</span>" : "") + "</span></div>";
+            }).join("") + "</div>" +
+            '<p class="streak-note">Exact dates computed for the current year by the open-source <a class="text-link" href="https://github.com/sarabveer/nanakshahi-js" target="_blank" rel="noopener">nanakshahi-js</a> library. Communities may observe on slightly different days — confirm locally.</p>';
+        }
+        host.innerHTML = html;
+        host.hidden = false;
+      } catch (e) { /* leave the panel hidden on any error */ }
+    });
+  }
+
   /* ------------------------------- router -------------------------------- */
   var routes = {
     "": viewHome, "home": viewHome, "figures": viewFigures, "stories": viewStories,
     "gurbani": viewGurbani, "nitnem": viewNitnem, "more": viewMore,
     "festivals": viewFestivals, "fives": viewFives, "glossary": viewGlossary,
     "gurdwaras": viewGurdwaras, "timeline": viewTimeline, "ceremonies": viewCeremonies,
-    "remembrance": viewRemembrance, "about": viewAbout, "saved": viewSaved
+    "remembrance": viewRemembrance, "about": viewAbout, "saved": viewSaved,
+    "beliefs": viewBeliefs, "women": viewWomen, "search": viewSearch
   };
   function router() {
     var hash = location.hash.replace(/^#\/?/, "");
@@ -1039,7 +1166,8 @@
     var map = {
       figure: "figures", story: "stories", "": "home",
       festivals: "more", fives: "more", glossary: "more", gurdwaras: "more", about: "more", more: "more",
-      timeline: "more", ceremonies: "more", remembrance: "more", saved: "more"
+      timeline: "more", ceremonies: "more", remembrance: "more", saved: "more",
+      beliefs: "more", women: "more"
     };
     var active = map[name] || name;
     qsa(".tab").forEach(function (t) { t.classList.toggle("active", t.getAttribute("data-tab") === active); });

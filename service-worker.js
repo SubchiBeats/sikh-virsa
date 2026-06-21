@@ -4,7 +4,7 @@
    fallback so the app works offline. Cross-origin requests (fonts, maps,
    audio) are left to the network. Bump CACHE on each meaningful deploy.
    ========================================================================== */
-var CACHE = "virsa-v1";
+var CACHE = "virsa-v2";
 var ASSETS = [
   "./",
   "./index.html",
@@ -22,6 +22,7 @@ var ASSETS = [
   "./assets/js/data-timeline.js",
   "./assets/js/data-ceremonies.js",
   "./assets/js/data-1984.js",
+  "./assets/js/data-beliefs.js",
   "./assets/js/app.js"
 ];
 

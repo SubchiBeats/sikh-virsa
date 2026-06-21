@@ -395,6 +395,7 @@ window.VIRSA.figures = [
     id: "mata-gujri",
     type: "figure",
     order: 101,
+    women: true,
     name: "Mata Gujri Ji",
     gurmukhi: "ਮਾਤਾ ਗੁਜਰੀ ਜੀ",
     title: "Mother and Pillar of the House of the Guru",
@@ -515,6 +516,7 @@ window.VIRSA.figures = [
     id: "mai-bhago",
     type: "figure",
     order: 105,
+    women: true,
     name: "Mai Bhago Ji (Mata Bhag Kaur)",
     gurmukhi: "ਮਾਈ ਭਾਗੋ ਜੀ",
     title: "Warrior and Leader of the Forty Liberated Ones",
@@ -726,6 +728,7 @@ window.VIRSA.figures = [
     id: "mata-sahib-kaur",
     type: "figure",
     order: 112,
+    women: true,
     name: "Mata Sahib Kaur Ji",
     gurmukhi: "ਮਾਤਾ ਸਾਹਿਬ ਕੌਰ ਜੀ",
     title: "Mother of the Khalsa",
@@ -781,5 +784,313 @@ window.VIRSA.figures = [
       "Bhagat Puran Singh Ji spent his whole life caring for people who were sick or disabled and had no one else. He started a special home called Pingalwara to look after them. He showed that helping others is the highest kind of love.",
     verifyUrl: "https://www.sikhiwiki.org/index.php/Bhagat_Puran_Singh",
     tags: ["seva", "humanitarian", "modern", "environment"]
+  },
+
+  /* ------------------- BHAGATS OF SRI GURU GRANTH SAHIB JI ---------------- */
+  {
+    id: "bhagat-kabir",
+    type: "bhagat",
+    order: 200,
+    name: "Bhagat Kabir Ji",
+    gurmukhi: "ਭਗਤ ਕਬੀਰ ਜੀ",
+    title: "Saint-poet whose bani is in Sri Guru Granth Sahib Ji",
+    born: "15th century (dates uncertain)",
+    passed: "—",
+    birthplace: "Banaras (Varanasi)",
+    icon: "gurmukhi",
+    relevance:
+      "A weaver and saint-poet whose powerful verses on the oneness of God and the emptiness of ritual and caste are honoured within Sri Guru Granth Sahib Ji.",
+    summary: [
+      "Bhagat Kabir Ji, a weaver of Banaras, taught that the One Creator dwells in all and cannot be confined to any temple, mosque, ritual, or caste.",
+      "His plain-spoken, fearless verses — drawing on everyday images of weaving, the household, and the marketplace — challenged hypocrisy and pride wherever he found it.",
+      "His compositions form the largest body of Bhagat bani in Sri Guru Granth Sahib Ji, a sign of the Gurus' embrace of truth wherever it is spoken."
+    ],
+    contributions: [
+      "His bani is the largest Bhagat contribution in Sri Guru Granth Sahib Ji.",
+      "Taught the oneness of God beyond ritual, caste, and religious label.",
+      "A timeless voice against hypocrisy and for inner truth."
+    ],
+    gurbani:
+      "The saloks and shabads of Bhagat Kabir Ji are read throughout Sri Guru Granth Sahib Ji, including a large section of his saloks.",
+    forKids:
+      "Bhagat Kabir Ji was a weaver who wrote beautiful, simple poems about how God is in everyone — and that being kind and honest matters more than fancy rituals. His poems are in our holy Sri Guru Granth Sahib Ji.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bhagat_Kabir",
+    tags: ["bhagat", "oneness", "equality", "poet"]
+  },
+  {
+    id: "bhagat-ravidas",
+    type: "bhagat",
+    order: 201,
+    name: "Bhagat Ravidas Ji",
+    gurmukhi: "ਭਗਤ ਰਵਿਦਾਸ ਜੀ",
+    title: "Saint-poet of equality whose bani is in Sri Guru Granth Sahib Ji",
+    born: "15th–16th century (dates uncertain)",
+    passed: "—",
+    birthplace: "Banaras (Varanasi)",
+    icon: "hands",
+    relevance:
+      "A cobbler and saint-poet, revered across communities, whose verses envision a society free of inequality and full of devotion to the One.",
+    summary: [
+      "Bhagat Ravidas Ji, a cobbler by trade, faced the prejudice of caste yet rose as one of the most beloved saint-poets of his age.",
+      "He is remembered for the vision of 'Begumpura' — a city without sorrow, fear, or inequality, where all are equal — an ideal close to the heart of Sikhi.",
+      "His devotional verses are honoured within Sri Guru Granth Sahib Ji."
+    ],
+    contributions: [
+      "His bani is part of Sri Guru Granth Sahib Ji.",
+      "Gave the world the vision of 'Begumpura', a society without inequality.",
+      "A saint whose life refuted caste prejudice through devotion and dignity."
+    ],
+    gurbani:
+      "The shabads of Bhagat Ravidas Ji appear in several raags within Sri Guru Granth Sahib Ji.",
+    forKids:
+      "Bhagat Ravidas Ji made shoes for a living. Even though some people treated him unfairly because of his job, he became a famous, holy poet. He dreamed of a place where everyone is equal and happy.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bhagat_Ravidas",
+    tags: ["bhagat", "equality", "poet", "devotion"]
+  },
+  {
+    id: "bhagat-namdev",
+    type: "bhagat",
+    order: 202,
+    name: "Bhagat Namdev Ji",
+    gurmukhi: "ਭਗਤ ਨਾਮਦੇਵ ਜੀ",
+    title: "Saint-poet whose bani is in Sri Guru Granth Sahib Ji",
+    born: "13th–14th century (dates uncertain)",
+    passed: "—",
+    birthplace: "Maharashtra",
+    icon: "lotus",
+    relevance:
+      "A saint-poet from Maharashtra whose loving devotion to the One Divine is honoured within Sri Guru Granth Sahib Ji.",
+    summary: [
+      "Bhagat Namdev Ji, remembered as a calico-printer, sang of the Divine with deep, tender love.",
+      "His verses move between devotion to the personal and the formless, always returning to the One present in all.",
+      "He is among the cherished Bhagats whose bani is preserved in Sri Guru Granth Sahib Ji."
+    ],
+    contributions: [
+      "His devotional bani is part of Sri Guru Granth Sahib Ji.",
+      "A bridge between the saints of Maharashtra and the wider Bhagti tradition.",
+      "A voice of pure, loving devotion to the One."
+    ],
+    gurbani:
+      "The shabads of Bhagat Namdev Ji are recorded in Sri Guru Granth Sahib Ji across several raags.",
+    forKids:
+      "Bhagat Namdev Ji loved God with all his heart and wrote sweet songs of devotion. His songs are part of our holy Sri Guru Granth Sahib Ji.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bhagat_Namdev",
+    tags: ["bhagat", "devotion", "poet"]
+  },
+  {
+    id: "bhagat-farid",
+    type: "bhagat",
+    order: 203,
+    name: "Sheikh Farid Ji (Baba Farid)",
+    gurmukhi: "ਸ਼ੇਖ਼ ਫ਼ਰੀਦ ਜੀ",
+    title: "Sufi saint whose bani is in Sri Guru Granth Sahib Ji",
+    born: "1173",
+    passed: "1266",
+    birthplace: "Punjab (Kothewal); rested at Pakpattan",
+    icon: "leaf",
+    relevance:
+      "A revered Sufi saint of Punjab whose saloks on humility, mortality, and love of the Divine are honoured within Sri Guru Granth Sahib Ji.",
+    summary: [
+      "Sheikh Farid Ji was a beloved Sufi saint of the Chishti tradition in Punjab, known for deep humility and devotion.",
+      "His saloks speak tenderly of the shortness of life, the folly of pride, and the call to remember the Divine and never to wound another's heart.",
+      "That a Muslim Sufi's verses are honoured in Sri Guru Granth Sahib Ji beautifully expresses Sikhi's vision of one truth shared across communities."
+    ],
+    contributions: [
+      "His saloks and shabads are part of Sri Guru Granth Sahib Ji.",
+      "Taught humility, compassion, and remembrance of the Divine.",
+      "A bridge of shared truth between Sufi and Sikh devotion."
+    ],
+    gurbani:
+      "The saloks of Sheikh Farid Ji are read within Sri Guru Granth Sahib Ji, including a cherished set of his saloks.",
+    forKids:
+      "Sheikh Farid Ji was a kind, humble Muslim holy man. He taught people to be gentle and never hurt others' feelings. His words are in our holy Sri Guru Granth Sahib Ji — showing that goodness belongs to everyone.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Sheikh_Farid",
+    tags: ["bhagat", "sufi", "humility", "unity"]
+  },
+  {
+    id: "bhagat-dhanna",
+    type: "bhagat",
+    order: 204,
+    name: "Bhagat Dhanna Ji",
+    gurmukhi: "ਭਗਤ ਧੰਨਾ ਜੀ",
+    title: "Farmer-saint whose bani is in Sri Guru Granth Sahib Ji",
+    born: "15th century (dates uncertain)",
+    passed: "—",
+    birthplace: "Rajasthan",
+    icon: "leaf",
+    relevance:
+      "A farmer whose simple, sincere devotion won the love of the Divine, remembered within Sri Guru Granth Sahib Ji.",
+    summary: [
+      "Bhagat Dhanna Ji was a Jat farmer whose devotion was utterly sincere and without pretension.",
+      "His life is a reminder that the Divine responds to a pure and loving heart, not to status or learning.",
+      "His bani is honoured within Sri Guru Granth Sahib Ji."
+    ],
+    contributions: [
+      "His bani is part of Sri Guru Granth Sahib Ji.",
+      "A model of sincere, simple, wholehearted devotion.",
+      "Proof that devotion needs no rank or riches."
+    ],
+    gurbani:
+      "The bani of Bhagat Dhanna Ji is recorded in Sri Guru Granth Sahib Ji.",
+    forKids:
+      "Bhagat Dhanna Ji was a simple farmer who loved God with a pure heart. He shows that you don't need to be rich or important to be close to God — you just need love.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bhagat_Dhanna",
+    tags: ["bhagat", "devotion", "humility"]
+  },
+  {
+    id: "bhagat-sain",
+    type: "bhagat",
+    order: 205,
+    name: "Bhagat Sain Ji",
+    gurmukhi: "ਭਗਤ ਸੈਣ ਜੀ",
+    title: "Saint whose bani is in Sri Guru Granth Sahib Ji",
+    born: "14th–15th century (dates uncertain)",
+    passed: "—",
+    birthplace: "India",
+    icon: "hands",
+    relevance:
+      "A barber by trade and a devoted saint whose bani is honoured within Sri Guru Granth Sahib Ji.",
+    summary: [
+      "Bhagat Sain Ji served as a barber and lived a life of humble devotion.",
+      "Like the other Bhagats, his presence in Sri Guru Granth Sahib Ji affirms that the Divine is found through love and sincerity in any honest walk of life.",
+      "His bani is preserved within the scripture."
+    ],
+    contributions: [
+      "His bani is part of Sri Guru Granth Sahib Ji.",
+      "A saint who served in an everyday trade with devotion.",
+      "A reminder that holiness is open to all, in any honest work."
+    ],
+    gurbani:
+      "The bani of Bhagat Sain Ji is recorded in Sri Guru Granth Sahib Ji.",
+    forKids:
+      "Bhagat Sain Ji was a barber who loved God deeply. He shows that anyone, doing any honest job, can be close to God.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bhagat_Sain",
+    tags: ["bhagat", "devotion", "equality"]
+  },
+
+  /* --------------------------- WOMEN IN SIKHI ---------------------------- */
+  {
+    id: "bibi-nanaki",
+    type: "figure",
+    order: 120,
+    women: true,
+    name: "Bibi Nanaki Ji",
+    gurmukhi: "ਬੇਬੇ ਨਾਨਕੀ ਜੀ",
+    title: "The first to recognise Guru Nanak Dev Ji",
+    born: "c. 1464",
+    passed: "c. 1518",
+    birthplace: "Chahal, near Lahore",
+    icon: "lotus",
+    relevance:
+      "The elder sister of Guru Nanak Dev Ji and, by tradition, the very first to recognise his divine light — honoured as the first Sikh.",
+    summary: [
+      "Bibi Nanaki Ji was the beloved elder sister of Guru Nanak Dev Ji, and is remembered as the first person to recognise the Divine light within him.",
+      "Her faith, encouragement, and love supported the Guru from his earliest years; tradition tells that she gave him his first rabab, beginning the tradition of Gurbani sung to music.",
+      "She is honoured with deep affection as the first of the Guru's followers."
+    ],
+    contributions: [
+      "By tradition, the first to recognise Guru Nanak Dev Ji's divine light.",
+      "A devoted supporter of the Guru from childhood.",
+      "Associated with the gift of the first rabab for Gurbani kirtan."
+    ],
+    gurbani:
+      "Her life embodies the loving faith that recognises the Divine — the very heart of Sikhi.",
+    forKids:
+      "Bibi Nanaki Ji was Guru Nanak's big sister. She was the very first person to see how special and holy he was, and she always loved and supported him.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bibi_Nanaki",
+    tags: ["women", "family", "first-sikh", "devotion"]
+  },
+  {
+    id: "mata-khivi",
+    type: "figure",
+    order: 121,
+    women: true,
+    name: "Mata Khivi Ji",
+    gurmukhi: "ਮਾਤਾ ਖੀਵੀ ਜੀ",
+    title: "Builder of the Langar",
+    born: "c. 1506",
+    passed: "c. 1582",
+    birthplace: "Punjab",
+    icon: "langar",
+    relevance:
+      "Wife of Guru Angad Dev Ji, who organised and expanded the Langar with such devotion that she is honoured by name within Sri Guru Granth Sahib Ji.",
+    summary: [
+      "Mata Khivi Ji, the wife of Guru Angad Dev Ji, devoted herself to the Langar — the free community kitchen — making it a place of warmth, plenty, and equality for all.",
+      "Remarkably, she is mentioned by name within Sri Guru Granth Sahib Ji (in the Var of Satta and Balwand), praised for her generous and nourishing seva — a rare and beautiful honour.",
+      "Her example shaped the Langar tradition that feeds millions to this day."
+    ],
+    contributions: [
+      "Organised and expanded the Langar into a model of generous seva.",
+      "Honoured by name within Sri Guru Granth Sahib Ji.",
+      "Helped shape the enduring tradition of feeding all as equals."
+    ],
+    gurbani:
+      "She is remembered with praise in the Ramkali Ki Var of Satta and Balwand within Sri Guru Granth Sahib Ji.",
+    forKids:
+      "Mata Khivi Ji made the free kitchen (Langar) warm and welcoming, feeding everyone with love. She is so respected that she is even mentioned by name in our holy Sri Guru Granth Sahib Ji!",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Mata_Khivi",
+    tags: ["women", "langar", "seva"]
+  },
+  {
+    id: "bibi-bhani",
+    type: "figure",
+    order: 122,
+    women: true,
+    name: "Bibi Bhani Ji",
+    gurmukhi: "ਬੀਬੀ ਭਾਨੀ ਜੀ",
+    title: "Daughter, wife, and mother of Gurus",
+    born: "c. 1535",
+    passed: "c. 1598",
+    birthplace: "Basarke, Punjab",
+    icon: "lotus",
+    relevance:
+      "Uniquely linked to three Gurus — daughter of Guru Amar Das Ji, wife of Guru Ram Das Ji, and mother of Guru Arjan Dev Ji — and a model of selfless seva.",
+    summary: [
+      "Bibi Bhani Ji holds a singular place in Sikh history: daughter of the Third Guru, wife of the Fourth, and mother of the Fifth.",
+      "She is remembered for extraordinary devotion and seva to her father, the Guru — a famous tradition tells of her steadying his seat without regard for her own injury, so as not to disturb his meditation.",
+      "Her grace and sacrifice helped nurture the House of the Guru through a formative age."
+    ],
+    contributions: [
+      "Daughter, wife, and mother of Gurus — uniquely linked to three.",
+      "A model of selfless devotion and seva.",
+      "Helped nurture the House of the Guru in a formative era."
+    ],
+    gurbani:
+      "Her life reflects the Gurbani ideal of seva offered with love and without thought of self.",
+    forKids:
+      "Bibi Bhani Ji was very special — her father, her husband, and her son were all Gurus! She is remembered for loving and serving others without ever thinking about herself.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Bibi_Bhani",
+    tags: ["women", "family", "seva", "devotion"]
+  },
+  {
+    id: "mata-sundari",
+    type: "figure",
+    order: 123,
+    women: true,
+    name: "Mata Sundari Ji",
+    gurmukhi: "ਮਾਤਾ ਸੁੰਦਰੀ ਜੀ",
+    title: "Guide of the Panth",
+    born: "17th century",
+    passed: "c. 1747",
+    birthplace: "Bijwara, Punjab",
+    icon: "lotus",
+    relevance:
+      "Wife of Guru Gobind Singh Ji who, after his passing, guided and held the Sikh community together for nearly four decades.",
+    summary: [
+      "Mata Sundari Ji was the wife of Guru Gobind Singh Ji.",
+      "After the Guru's passing in 1708, she became a steadying, unifying presence for the Sikh community for almost forty years, offering guidance through a turbulent and dangerous age.",
+      "Her leadership and wisdom helped the young Panth endure and remain united."
+    ],
+    contributions: [
+      "Guided the Sikh community for nearly four decades after Guru Gobind Singh Ji.",
+      "A unifying, steadying presence through a turbulent era.",
+      "An example of wise and steadfast leadership."
+    ],
+    gurbani:
+      "Her steadiness reflects the Gurbani spirit of Chardi Kala — holding faith and dignity through every trial.",
+    forKids:
+      "Mata Sundari Ji was Guru Gobind Singh Ji's wife. After he passed away, she bravely guided and looked after the whole Sikh community for many, many years.",
+    verifyUrl: "https://www.sikhiwiki.org/index.php/Mata_Sundari",
+    tags: ["women", "leader", "family", "guidance"]
   }
 ];

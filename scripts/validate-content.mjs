@@ -15,7 +15,8 @@ const dataFiles = [
   "assets/js/data-gurdwaras.js",
   "assets/js/data-timeline.js",
   "assets/js/data-ceremonies.js",
-  "assets/js/data-1984.js"
+  "assets/js/data-1984.js",
+  "assets/js/data-beliefs.js"
 ];
 const scriptFiles = ["assets/js/app.js", ...dataFiles];
 const errors = [];

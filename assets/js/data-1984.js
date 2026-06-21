@@ -94,6 +94,21 @@ window.VIRSA.remembrance = [
     ]
   },
   {
+    id: "testimony",
+    title: "Survivor Testimony",
+    period: "Documented over decades",
+    summary:
+      "The truest record of 1984 lives in the voices of those who survived it, and the families of those who did not.",
+    body: [
+      "Beyond figures and timelines, the heart of 1984 is held in first-person testimony — the accounts of widows, orphans, and survivors who lived through Operation Blue Star and the November pogroms.",
+      "Organisations such as Ensaaf have spent years documenting these accounts and building a public record of victims, so that the truth cannot be quietly erased or denied.",
+      "To listen to survivors — patiently and with respect — is itself an act of justice. Their testimony keeps the memory honest, names what was done, and honours those who were lost."
+    ],
+    sources: [
+      { label: "Ensaaf — documentation & victim database", url: "https://ensaaf.org/" }
+    ]
+  },
+  {
     id: "yaad",
     title: "Yaad — Remembrance",
     period: "Every June & November",

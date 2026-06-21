@@ -505,3 +505,30 @@ html[data-theme="dark"] .tragedy-card { border-left-color: #9db4e6; }
 }
 .v-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 @media (min-width: 860px) { .v-toast { bottom: 28px; } }
+
+/* ===================== Added (v5): beliefs, search, dates =============== */
+/* Core Beliefs */
+.belief-list { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.belief-card { padding: 18px; }
+.belief-card h3 { margin: 0 0 4px; font-size: 1.08rem; }
+.belief-card .gurmukhi { color: var(--accent-ink); font-weight: 500; }
+.belief-summary { font-weight: 600; color: var(--ink); margin: .2em 0 .5em; }
+.belief-detail { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+
+/* Search */
+.search-results { display: grid; gap: 8px; margin-top: 6px; }
+.search-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); text-decoration: none; color: inherit; transition: .15s; }
+.search-row:hover { border-color: var(--accent); background: var(--surface-2); }
+.search-main { font-weight: 600; }
+.search-sub { font-size: .76rem; color: var(--ink-soft); white-space: nowrap; flex: none; }
+
+/* Nanakshahi upcoming dates */
+.nk-panel { padding: 16px 18px; margin-bottom: 16px; }
+.nk-today { font-size: .95rem; }
+.nk-heading { margin: 14px 0 8px; font-family: var(--font-display); font-size: 1rem; }
+.nk-list { display: grid; gap: 0; }
+.nk-item { display: flex; gap: 12px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.nk-item:last-child { border-bottom: 0; }
+.nk-date { flex: 0 0 138px; font-size: .82rem; color: var(--accent-ink); font-weight: 600; }
+.nk-name { font-size: .92rem; }
+@media (max-width: 480px) { .nk-item { flex-direction: column; gap: 2px; padding: 8px 0; } .nk-date { flex-basis: auto; } }
